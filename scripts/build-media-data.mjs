@@ -125,6 +125,28 @@ const EXCLUDED_ASSETS = new Map([
     "ASC-OPS-002",
     "superseded: lens-flared social crop of the amphitheatre; replaced by the clean exact-project photograph OJ4-OPS-02",
   ],
+
+  // — Quality purge (image audit, 20 Aug 2026): register-era sources whose
+  //   width AND height are both under 900px cannot fill their gallery slots
+  //   without a visible upscale. Every excluded file was viewed to confirm.
+  ["ASC-EDS-015", "quality purge: 800x533 source, soft at gallery size"],
+  ["ASC-SYD-002", "quality purge: 800x533 source, soft at gallery size"],
+  ["ASC-SYD-004", "quality purge: 800x599 source, soft at gallery size"],
+  ["ASC-SYD-005", "quality purge: 800x599 source, soft at gallery size"],
+  ["ASC-OPH-004", "quality purge: 800x442 source, soft at gallery size"],
+  ["ASC-OPH-006", "quality purge: 800x446 source, soft at gallery size"],
+  ["ASC-ASH-009", "quality purge: 726x545 source, soft at gallery size"],
+  ["ASC-T95-004", "quality purge: 800x533 source, soft at gallery size"],
+  ["ASC-T95-008", "quality purge: 800x533 source, soft at gallery size"],
+
+  // — Quality purge (same audit): video frames that read soft at their slot
+  //   or carry baked-in subtitles/overlays. Every one was viewed to confirm.
+  ["ASC-EDS-014", "quality purge: 716px night video frame, soft and noisy at gallery size"],
+  ["ASC-BAB-009", "quality purge: 720px drone video frame, visibly soft beside the 4K photography"],
+  ["ASC-BAB-010", "quality purge: drone video frame with baked-in subtitle text"],
+  ["ASC-BAB-011", "quality purge: drone video frame with baked-in subtitle text"],
+  ["ASC-AUB-004", "quality purge: drone video frame with baked-in subtitle text"],
+  ["ASC-AUB-006", "quality purge: drone video frame with baked-in subtitle text"],
 ]);
 
 /** Sector labels normalised to the brief's filter set. */

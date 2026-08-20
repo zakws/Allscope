@@ -239,17 +239,6 @@ export const projectRecords: ProjectRecord[] = [
         "caption": "Tower and retail precinct at night."
       },
       {
-        "assetId": "ASC-EDS-014",
-        "src": "/media/projects/ed-square/ASC-EDS-014.webp",
-        "width": 716,
-        "height": 1280,
-        "orientation": "portrait",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Crane installation."
-      },
-      {
         "assetId": "ASC-EDS-011",
         "src": "/media/projects/ed-square/ASC-EDS-011.webp",
         "width": 1934,
@@ -349,17 +338,6 @@ export const projectRecords: ProjectRecord[] = [
         "caption": "Low-angle tower façade."
       },
       {
-        "assetId": "ASC-EDS-015",
-        "src": "/media/projects/ed-square/ASC-EDS-015.webp",
-        "width": 800,
-        "height": 533,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Aerial progress."
-      },
-      {
         "assetId": "OJ4-EDS-01",
         "src": "/media/projects/ed-square/OJ4-EDS-01.webp",
         "width": 2000,
@@ -403,39 +381,6 @@ export const projectRecords: ProjectRecord[] = [
       "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
     },
     "gallery": [
-      {
-        "assetId": "ASC-BAB-009",
-        "src": "/media/projects/babylon/ASC-BAB-009.webp",
-        "width": 720,
-        "height": 1280,
-        "orientation": "portrait",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Facade progress frame."
-      },
-      {
-        "assetId": "ASC-BAB-010",
-        "src": "/media/projects/babylon/ASC-BAB-010.webp",
-        "width": 720,
-        "height": 1280,
-        "orientation": "portrait",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Aerial progress frame."
-      },
-      {
-        "assetId": "ASC-BAB-011",
-        "src": "/media/projects/babylon/ASC-BAB-011.webp",
-        "width": 720,
-        "height": 1280,
-        "orientation": "portrait",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Wide site progress frame."
-      },
       {
         "assetId": "OJ4-BAB-02",
         "src": "/media/projects/babylon/OJ4-BAB-02.webp",
@@ -503,28 +448,6 @@ export const projectRecords: ProjectRecord[] = [
         "caption": "Finished interior/lobby detail."
       },
       {
-        "assetId": "ASC-AUB-004",
-        "src": "/media/projects/auburn-square/ASC-AUB-004.webp",
-        "width": 1280,
-        "height": 720,
-        "orientation": "landscape",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Aerial pour frame."
-      },
-      {
-        "assetId": "ASC-AUB-006",
-        "src": "/media/projects/auburn-square/ASC-AUB-006.webp",
-        "width": 1280,
-        "height": 720,
-        "orientation": "landscape",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Aerial excavation frame."
-      },
-      {
         "assetId": "OJ4-AUB-01",
         "src": "/media/projects/auburn-square/OJ4-AUB-01.webp",
         "width": 2000,
@@ -557,39 +480,6 @@ export const projectRecords: ProjectRecord[] = [
       "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
     },
     "gallery": [
-      {
-        "assetId": "ASC-SYD-002",
-        "src": "/media/projects/sydney-international-airport/ASC-SYD-002.webp",
-        "width": 800,
-        "height": 533,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Wide completed departures hall."
-      },
-      {
-        "assetId": "ASC-SYD-004",
-        "src": "/media/projects/sydney-international-airport/ASC-SYD-004.webp",
-        "width": 800,
-        "height": 599,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Wide completed departures hall and SYD wall."
-      },
-      {
-        "assetId": "ASC-SYD-005",
-        "src": "/media/projects/sydney-international-airport/ASC-SYD-005.webp",
-        "width": 800,
-        "height": 599,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Close-up of illuminated SYD departures signage."
-      },
       {
         "assetId": "OWN-SYD-01",
         "src": "/media/projects/sydney-international-airport/OWN-SYD-01.webp",
@@ -645,28 +535,6 @@ export const projectRecords: ProjectRecord[] = [
       "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
     },
     "gallery": [
-      {
-        "assetId": "ASC-OPH-004",
-        "src": "/media/projects/oran-park-hotel/ASC-OPH-004.webp",
-        "width": 800,
-        "height": 442,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Wide structural-progress view with crane."
-      },
-      {
-        "assetId": "ASC-OPH-006",
-        "src": "/media/projects/oran-park-hotel/ASC-OPH-006.webp",
-        "width": 800,
-        "height": 446,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Aerial structural construction progress."
-      },
       {
         "assetId": "OJ4-OPH-02",
         "src": "/media/projects/oran-park-hotel/OJ4-OPH-02.webp",
@@ -754,17 +622,6 @@ export const projectRecords: ProjectRecord[] = [
         "render": false,
         "contextOnly": false,
         "caption": "Façade, stair and material detail."
-      },
-      {
-        "assetId": "ASC-ASH-009",
-        "src": "/media/projects/asha-westmead/ASC-ASH-009.webp",
-        "width": 726,
-        "height": 545,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Rear/street context view."
       },
       {
         "assetId": "OJ4-ASH-01",
@@ -1284,17 +1141,6 @@ export const projectRecords: ProjectRecord[] = [
     },
     "gallery": [
       {
-        "assetId": "ASC-T95-004",
-        "src": "/media/projects/twenty95-manly/ASC-T95-004.webp",
-        "width": 800,
-        "height": 533,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Completed building in Manly urban context."
-      },
-      {
         "assetId": "ASC-T95-005",
         "src": "/media/projects/twenty95-manly/ASC-T95-005.webp",
         "width": 800,
@@ -1304,17 +1150,6 @@ export const projectRecords: ProjectRecord[] = [
         "render": false,
         "contextOnly": false,
         "caption": "Sydney Road façade and streetscape."
-      },
-      {
-        "assetId": "ASC-T95-008",
-        "src": "/media/projects/twenty95-manly/ASC-T95-008.webp",
-        "width": 800,
-        "height": 533,
-        "orientation": "landscape",
-        "tier": "D",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Primary completed façade at intersection."
       },
       {
         "assetId": "ASC-T95-006",

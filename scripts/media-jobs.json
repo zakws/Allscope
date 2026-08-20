@@ -77,27 +77,6 @@
   "quality": 84
  },
  {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\05-sydney-international-airport-t1-departures-immigration\\ASC-SYD-002-wide-completed-departures-hall.jpg",
-  "out": "public/media/projects/sydney-international-airport/ASC-SYD-002.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\05-sydney-international-airport-t1-departures-immigration\\ASC-SYD-004-wide-completed-departures-hall-and-syd-wall.jpg",
-  "out": "public/media/projects/sydney-international-airport/ASC-SYD-004.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\05-sydney-international-airport-t1-departures-immigration\\ASC-SYD-005-close-up-of-illuminated-syd-departures-signage.jpg",
-  "out": "public/media/projects/sydney-international-airport/ASC-SYD-005.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\08-one-the-waterfront\\ASC-OTW-005-active-wet-concrete-placement-over-reinforcement.jpg",
   "out": "public/media/projects/one-the-waterfront/ASC-OTW-005.webp",
   "kind": "gallery",
@@ -266,20 +245,6 @@
   "quality": 82
  },
  {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\04-auburn-square-stage-1\\ASC-AUB-004-aerial-pour-frame.jpg",
-  "out": "public/media/projects/auburn-square/ASC-AUB-004.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\04-auburn-square-stage-1\\ASC-AUB-006-aerial-excavation-frame.jpg",
-  "out": "public/media/projects/auburn-square/ASC-AUB-006.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\01-kennards-self-storage\\ASC-KMP-001-completed-orange-clad-storage-exterior.jpg",
   "out": "public/media/projects/kennards-macquarie-park/ASC-KMP-001.webp",
   "kind": "gallery",
@@ -378,36 +343,8 @@
   "quality": 82
  },
  {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\07-asha-westmead\\ASC-ASH-009-rear-street-context-view.jpg",
-  "out": "public/media/projects/asha-westmead/ASC-ASH-009.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\07-asha-westmead\\ASC-ASH-010-fa-ade-stair-and-material-detail.jpg",
   "out": "public/media/projects/asha-westmead/ASC-ASH-010.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\03-babylon\\ASC-BAB-009-facade-progress-frame.jpg",
-  "out": "public/media/projects/babylon/ASC-BAB-009.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\03-babylon\\ASC-BAB-010-aerial-progress-frame.jpg",
-  "out": "public/media/projects/babylon/ASC-BAB-010.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\03-babylon\\ASC-BAB-011-wide-site-progress-frame.jpg",
-  "out": "public/media/projects/babylon/ASC-BAB-011.webp",
   "kind": "gallery",
   "maxW": 2000,
   "quality": 82
@@ -483,41 +420,6 @@
   "quality": 82
  },
  {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\02-ed-square-arlington-clifton\\ASC-EDS-014-crane-installation-linkedin.jpg",
-  "out": "public/media/projects/ed-square/ASC-EDS-014.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\02-ed-square-arlington-clifton\\ASC-EDS-015-aerial-progress-linkedin.jpg",
-  "out": "public/media/projects/ed-square/ASC-EDS-015.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\06-oran-park-hotel\\ASC-OPH-004-wide-structural-progress-view-with-crane.jpg",
-  "out": "public/media/projects/oran-park-hotel/ASC-OPH-004.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\06-oran-park-hotel\\ASC-OPH-006-aerial-structural-construction-progress.jpg",
-  "out": "public/media/projects/oran-park-hotel/ASC-OPH-006.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\12-twenty95\\ASC-T95-004-completed-building-in-manly-urban-context.jpg",
-  "out": "public/media/projects/twenty95-manly/ASC-T95-004.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\12-twenty95\\ASC-T95-005-sydney-road-fa-ade-and-streetscape.jpg",
   "out": "public/media/projects/twenty95-manly/ASC-T95-005.webp",
   "kind": "gallery",
@@ -534,13 +436,6 @@
  {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\12-twenty95\\ASC-T95-007-long-urban-approach-view.jpg",
   "out": "public/media/projects/twenty95-manly/ASC-T95-007.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\12-twenty95\\ASC-T95-008-primary-completed-fa-ade-at-intersection.jpg",
-  "out": "public/media/projects/twenty95-manly/ASC-T95-008.webp",
   "kind": "gallery",
   "maxW": 2000,
   "quality": 82
