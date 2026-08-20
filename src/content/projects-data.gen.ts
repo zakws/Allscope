@@ -1207,17 +1207,6 @@ export const projectRecords: ProjectRecord[] = [
     },
     "gallery": [
       {
-        "assetId": "ASC-OPS-001",
-        "src": "/media/projects/oran-park-public-school/ASC-OPS-001.webp",
-        "width": 2400,
-        "height": 1543,
-        "orientation": "landscape",
-        "tier": "B",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Completed Oran Park Public School exterior."
-      },
-      {
         "assetId": "OJ4-OPS-02",
         "src": "/media/projects/oran-park-public-school/OJ4-OPS-02.webp",
         "width": 2000,

@@ -504,13 +504,6 @@
   "quality": 82
  },
  {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\13-oran-park-public-school\\ASC-OPS-001-completed-oran-park-public-school-exterior.jpg",
-  "out": "public/media/projects/oran-park-public-school/ASC-OPS-001.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\99-allscope-social-capability-images\\ASC-CAP-001-clean-planning-crop-of-allscope-s-3-july-2022-basement.jpg",
   "out": "public/media/capability/ASC-CAP-001.webp",
   "kind": "capability",

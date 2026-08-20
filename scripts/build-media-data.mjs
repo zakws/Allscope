@@ -81,6 +81,8 @@ const CONTEXT = "BUILDER_APPROVED_CONTEXT_ONLY";
  * contractor's identity dominates the frame.
  */
 const EXCLUDED_ASSETS = new Map([
+  // Identifiable schoolchildren are the main subject; minors never publish.
+  ["ASC-OPS-001", "identifiable minors as main subject"],
   // — Architectural renders / CGI (every RENDER_CONTEXT row in the register)
   ["ASC-EDS-001", "render/CGI: balcony and park outlook render"],
   ["ASC-EDS-002", "render/CGI: park and tower render"],
