@@ -1,0 +1,202 @@
+{
+ "OJ4-KMP-03": {
+  "width": 2400,
+  "height": 1597,
+  "src": "/media/leads/OJ4-KMP-03.webp"
+ },
+ "OJ4-EDS-01": {
+  "width": 2000,
+  "height": 1335,
+  "src": "/media/projects/ed-square/OJ4-EDS-01.webp"
+ },
+ "OJ4-EDS-02": {
+  "width": 2000,
+  "height": 1334,
+  "src": "/media/projects/ed-square/OJ4-EDS-02.webp"
+ },
+ "OJ4-BAB-01": {
+  "width": 2400,
+  "height": 1601,
+  "src": "/media/leads/OJ4-BAB-01.webp"
+ },
+ "OJ4-BAB-02": {
+  "width": 2000,
+  "height": 1334,
+  "src": "/media/projects/babylon/OJ4-BAB-02.webp"
+ },
+ "OJ4-BAB-03": {
+  "width": 2000,
+  "height": 1334,
+  "src": "/media/projects/babylon/OJ4-BAB-03.webp"
+ },
+ "OJ4-AUB-01": {
+  "width": 2000,
+  "height": 1334,
+  "src": "/media/projects/auburn-square/OJ4-AUB-01.webp"
+ },
+ "OJ4-SYD-01": {
+  "width": 2000,
+  "height": 2178,
+  "src": "/media/projects/sydney-international-airport/OJ4-SYD-01.webp"
+ },
+ "OJ4-OPH-01": {
+  "width": 2400,
+  "height": 1800,
+  "src": "/media/leads/OJ4-OPH-01.webp"
+ },
+ "OJ4-OPH-02": {
+  "width": 2000,
+  "height": 1300,
+  "src": "/media/projects/oran-park-hotel/OJ4-OPH-02.webp"
+ },
+ "OJ4-ASH-01": {
+  "width": 2000,
+  "height": 1335,
+  "src": "/media/projects/asha-westmead/OJ4-ASH-01.webp"
+ },
+ "OJ4-ASH-02": {
+  "width": 2000,
+  "height": 1335,
+  "src": "/media/projects/asha-westmead/OJ4-ASH-02.webp"
+ },
+ "OJ4-OTW-01": {
+  "width": 2000,
+  "height": 1333,
+  "src": "/media/projects/one-the-waterfront/OJ4-OTW-01.webp"
+ },
+ "OJ4-OTW-02": {
+  "width": 2000,
+  "height": 1225,
+  "src": "/media/projects/one-the-waterfront/OJ4-OTW-02.webp"
+ },
+ "OJ4-VRK-01": {
+  "width": 2000,
+  "height": 1500,
+  "src": "/media/projects/view-rockdale/OJ4-VRK-01.webp"
+ },
+ "OJ4-VRK-02": {
+  "width": 2000,
+  "height": 1500,
+  "src": "/media/projects/view-rockdale/OJ4-VRK-02.webp"
+ },
+ "OJ4-BPL-01": {
+  "width": 2000,
+  "height": 3000,
+  "src": "/media/projects/bay-pavilions-lane-cove/OJ4-BPL-01.webp"
+ },
+ "OJ4-T95-01": {
+  "width": 2400,
+  "height": 1600,
+  "src": "/media/leads/OJ4-T95-01.webp"
+ },
+ "OJ4-OPS-01": {
+  "width": 2400,
+  "height": 1543,
+  "src": "/media/leads/OJ4-OPS-01.webp"
+ },
+ "OJ4-OPS-02": {
+  "width": 2000,
+  "height": 1286,
+  "src": "/media/projects/oran-park-public-school/OJ4-OPS-02.webp"
+ },
+ "OJ4-BPP-01": {
+  "width": 2000,
+  "height": 1333,
+  "src": "/media/projects/bp-prestons/OJ4-BPP-01.webp"
+ },
+ "OJ4-BPP-02": {
+  "width": 2000,
+  "height": 1333,
+  "src": "/media/projects/bp-prestons/OJ4-BPP-02.webp"
+ },
+ "OJ4-EJP-01": {
+  "width": 2000,
+  "height": 1333,
+  "src": "/media/projects/el-jannah-prestons/OJ4-EJP-01.webp"
+ },
+ "OJ4-EJP-02": {
+  "width": 2000,
+  "height": 1333,
+  "src": "/media/projects/el-jannah-prestons/OJ4-EJP-02.webp"
+ },
+ "OJ4-BPO-01": {
+  "width": 2000,
+  "height": 1746,
+  "src": "/media/projects/bp-oberon/OJ4-BPO-01.webp"
+ },
+ "OWN-SYD-01": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/projects/sydney-international-airport/OWN-SYD-01.webp"
+ },
+ "OWN-SYD-02": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/projects/sydney-international-airport/OWN-SYD-02.webp"
+ },
+ "OWN-OPS-01": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/projects/oran-park-public-school/OWN-OPS-01.webp"
+ },
+ "OWN-OPS-02": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/projects/oran-park-public-school/OWN-OPS-02.webp"
+ },
+ "OWN-OPS-03": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/projects/oran-park-public-school/OWN-OPS-03.webp"
+ },
+ "OWN-OPS-04": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/projects/oran-park-public-school/OWN-OPS-04.webp"
+ },
+ "OWN-OPS-05": {
+  "width": 2000,
+  "height": 1500,
+  "src": "/media/projects/oran-park-public-school/OWN-OPS-05.webp"
+ },
+ "OWN-OPS-06": {
+  "width": 2000,
+  "height": 1500,
+  "src": "/media/projects/oran-park-public-school/OWN-OPS-06.webp"
+ },
+ "OWN-CAP-146": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/capability/OWN-CAP-146.webp"
+ },
+ "OWN-CAP-149": {
+  "width": 2000,
+  "height": 2000,
+  "src": "/media/capability/OWN-CAP-149.webp"
+ },
+ "OWN-CAP-152": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/capability/OWN-CAP-152.webp"
+ },
+ "OWN-CAP-166": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/capability/OWN-CAP-166.webp"
+ },
+ "OWN-CAP-169": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/capability/OWN-CAP-169.webp"
+ },
+ "OWN-CAP-197": {
+  "width": 2000,
+  "height": 2667,
+  "src": "/media/capability/OWN-CAP-197.webp"
+ },
+ "OWN-CAP-215": {
+  "width": 2000,
+  "height": 816,
+  "src": "/media/capability/OWN-CAP-215.webp"
+ }
+}
