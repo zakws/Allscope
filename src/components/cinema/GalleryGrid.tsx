@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { GalleryExpand } from "./GalleryExpand";
 import { Lightbox, useLightbox, type LightboxImage } from "./Lightbox";
 import type { GalleryPhoto } from "@/content/gallery-data.gen";
 
@@ -61,29 +62,57 @@ export function GalleryGrid({ photos }: { photos: GalleryPhoto[] }) {
         ))}
       </div>
 
-      {/* Alternating rows */}
-      <div className="mt-10 space-y-10 md:mt-16 md:space-y-16">
+      {/* Alternating rows: the strongest set renders immediately; the full
+          collection sits behind an accessible toggle so the first paint of
+          the page stays a curated sequence, not a 220-photo scroll. */}
+      <RowSet rows={rows.slice(0, VISIBLE_ROWS)} open={lb.open} wrap={false} />
+      {rows.length > VISIBLE_ROWS && (
+        <div className="mt-10 md:mt-16">
+          <GalleryExpand
+            first={null}
+            rest={<RowSet rows={rows.slice(VISIBLE_ROWS)} open={lb.open} wrap={false} />}
+            moreCount={rows
+              .slice(VISIBLE_ROWS)
+              .reduce((n, row) => n + row.items.length, 0)}
+          />
+        </div>
+      )}
+
+      <Lightbox state={lb} />
+    </>
+  );
+}
+
+const VISIBLE_ROWS = 16;
+
+function RowSet({
+  rows,
+  open,
+}: {
+  rows: { items: GalleryPhoto[]; start: number }[];
+  open: (i: number) => void;
+  wrap?: boolean;
+}) {
+  return (
+    <div className="mt-10 space-y-10 md:mt-16 md:space-y-16">
         {rows.map((row) => (
           <Reveal key={row.items[0].thumb}>
             {row.items.length === 2 ? (
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 {row.items.map((p, k) => (
-                  <Tile key={p.thumb} photo={p} index={row.start + k} open={lb.open} />
+                  <Tile key={p.thumb} photo={p} index={row.start + k} open={open} />
                 ))}
               </div>
             ) : row.items[0].orientation === "landscape" ? (
-              <Tile photo={row.items[0]} index={row.start} open={lb.open} />
+              <Tile photo={row.items[0]} index={row.start} open={open} />
             ) : (
               <div className="mx-auto w-full max-w-md md:max-w-lg">
-                <Tile photo={row.items[0]} index={row.start} open={lb.open} />
+                <Tile photo={row.items[0]} index={row.start} open={open} />
               </div>
             )}
           </Reveal>
         ))}
-      </div>
-
-      <Lightbox state={lb} />
-    </>
+    </div>
   );
 }
 
