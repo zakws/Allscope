@@ -1028,16 +1028,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "role": "row"
   },
   {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-15-2-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-20-58-15-2-.webp",
-    "width": 1000,
-    "height": 540,
-    "orientation": "landscape",
-    "alt": "Ride-on power trowel on a burnished concrete slab against a capping beam lined with starter bars.",
-    "caption": "Concrete pumping operation",
-    "role": "row"
-  },
-  {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-16-3-.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-58-16-3-.webp",
     "width": 1000,
@@ -1208,16 +1198,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "role": "row"
   },
   {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-18-23-07-11-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-18-23-07-11-.webp",
-    "width": 750,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Elevated view of the same courtyard of formed concrete walls between scaffold-wrapped buildings, shot over a chain-wire fence with a tower crane above.",
-    "caption": "Commercial concrete construction",
-    "role": "row"
-  },
-  {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-17.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-58-17.webp",
     "width": 750,
@@ -1225,16 +1205,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "orientation": "portrait",
     "alt": "A crew fixes mesh reinforcement and bar chairs inside curved formwork for a residential driveway with a strip drain at the entry.",
     "caption": "Reinforcement and formwork",
-    "role": "row"
-  },
-  {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-19-1-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-20-58-19-1-.webp",
-    "width": 486,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "An operator rides a power trowel across a glassy basement slab with starter bars in the foreground.",
-    "caption": "Concrete placement and finishing",
     "role": "row"
   },
   {
@@ -1335,16 +1305,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "orientation": "portrait",
     "alt": "Broom finished industrial hardstand slab spanning the yard behind a dark cured pavement edge, with mesh bags stacked at the joint.",
     "caption": "Structural concrete works",
-    "role": "row"
-  },
-  {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-18-33-41-10-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-18-33-41-10-.webp",
-    "width": 750,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Elevated view from a completed slab over the next formed-up level with a crane jib overhead, similar frame to the stronger 41(14).",
-    "caption": "Commercial concrete construction",
     "role": "row"
   },
   {
@@ -1458,16 +1418,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "role": "row"
   },
   {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-15-1-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-20-58-15-1-.webp",
-    "width": 1000,
-    "height": 461,
-    "orientation": "landscape",
-    "alt": "Warehouse floor covered with vapour barrier membrane and screed rails ahead of a large internal pour.",
-    "caption": "Reinforcement and formwork",
-    "role": "row"
-  },
-  {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-15.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-58-15.webp",
     "width": 561,
@@ -1495,16 +1445,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "orientation": "portrait",
     "alt": "Finished concrete driveway with an integral kerb runs beside a new building towards a scaffold tower at the rear boundary.",
     "caption": "Structural concrete works",
-    "role": "row"
-  },
-  {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-18-33-41-6-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-18-33-41-6-.webp",
-    "width": 461,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Tight view of the Allscope pump boom arched over a scaffolded apartment building with a boom pump warning sign at the truck.",
-    "caption": "Concrete pumping operation",
     "role": "row"
   },
   {
@@ -1558,16 +1498,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "role": "row"
   },
   {
-    "thumb": "/media/gallery/thumb/img-1061.webp",
-    "full": "/media/gallery/full/img-1061.webp",
-    "width": 1000,
-    "height": 765,
-    "orientation": "landscape",
-    "alt": "Angled concrete tiered stairs and seating at a plaza, shot into direct sun with heavy flare washing out the top of the frame.",
-    "caption": "Structural concrete works",
-    "role": "row"
-  },
-  {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-18-23-07-13-.webp",
     "full": "/media/gallery/full/photo-2026-07-29-18-23-07-13-.webp",
     "width": 750,
@@ -1594,16 +1524,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "height": 1000,
     "orientation": "portrait",
     "alt": "Timber edge forms pegged out for footpaths along a finished apartment frontage, with rebar bundles on the dirt roadway.",
-    "caption": "Commercial concrete construction",
-    "role": "row"
-  },
-  {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-18-23-07-6-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-18-23-07-6-.webp",
-    "width": 750,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Timber footpath edge forms and rebar bundles along the Building C frontage awaiting the path pour.",
     "caption": "Commercial concrete construction",
     "role": "row"
   },
@@ -1978,16 +1898,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "role": "row"
   },
   {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-20-56-51.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-20-56-51.webp",
-    "width": 674,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Portrait crop of the same charcoal stamped concrete path between garden beds, softer and tighter than the landscape frame of the identical scene.",
-    "caption": "Structural concrete works",
-    "role": "row"
-  },
-  {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-56-55.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-56-55.webp",
     "width": 1000,
@@ -2005,16 +1915,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "orientation": "portrait",
     "alt": "Close view of a worker climbing onto a ride-on power trowel on a finished deck, with the person filling most of the frame.",
     "caption": "Concrete placement and finishing",
-    "role": "row"
-  },
-  {
-    "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-11-1-.webp",
-    "full": "/media/gallery/full/photo-2026-07-29-20-58-11-1-.webp",
-    "width": 750,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Night view of a freshly poured slab with clustered column starter bars under site lighting.",
-    "caption": "Structural concrete works",
     "role": "row"
   },
   {
