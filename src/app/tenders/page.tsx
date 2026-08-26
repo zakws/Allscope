@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { TenderForm } from "@/components/forms/TenderForm";
-import { capabilityImages } from "@/content/projects-data.gen";
+import { featurePhotos } from "@/content/capability-data.gen";
 import { site } from "@/content/site";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/tenders",
 });
 
-const freshDeck = capabilityImages.find((img) => img.assetId === "OWN-CAP-215");
+const freshDeck = featurePhotos["tenders-deck"];
 
 export default function TendersPage() {
   return (
@@ -46,14 +46,14 @@ export default function TendersPage() {
               <div className="relative w-full overflow-hidden bg-surface-850" style={{ aspectRatio: "49 / 10" }}>
                 <Image
                   src={freshDeck.src}
-                  alt="A freshly poured and finished deck, starter bars standing ready for the next lift"
+                  alt="Reinforced deck laid with mesh ready for concrete, with the pour under way in the distance"
                   fill
                   sizes="(max-width: 767px) 100vw, 80vw"
                   className="object-cover"
                 />
               </div>
               <figcaption className="tech-label mt-3 text-ink-3">
-                A deck poured and finished, starter bars ready for the next lift
+                A deck laid and checked, the pour already moving toward it
               </figcaption>
             </figure>
           </Reveal>

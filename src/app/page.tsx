@@ -14,7 +14,8 @@ import {
   statusLabel,
 } from "@/components/cinema/ProjectMedia";
 import { Reveal } from "@/components/ui/Reveal";
-import { capabilityImages, projectRecords } from "@/content/projects-data.gen";
+import { projectRecords } from "@/content/projects-data.gen";
+import { featurePhotos } from "@/content/capability-data.gen";
 import type { ProjectRecord } from "@/content/projects-data.gen";
 import { reviews } from "@/content/reviews";
 import { JsonLd, organizationJsonLd } from "@/lib/jsonld";
@@ -55,8 +56,8 @@ export default function HomePage() {
   const featured = FEATURED_SLUGS.map((slug) => record(slug));
   const onsite = record("auburn-square");
   const onsiteStatus = statusLabel(onsite);
-  const aerial = capabilityImages.find((img) => img.assetId === "ASC-CAP-004");
-  const slabDetail = capabilityImages.find((img) => img.assetId === "OWN-CAP-166");
+  const aerial = featurePhotos["home-band"];
+  const slabDetail = featurePhotos["home-slab"];
 
   return (
     <>
@@ -198,7 +199,7 @@ export default function HomePage() {
                 >
                   <Image
                     src={aerial.src}
-                    alt="Aerial view of a concrete pour with trucks staged around the pump"
+                    alt="Allscope boom pump raised between two Allscope branded trucks beside a freshly finished slab"
                     fill
                     sizes="(max-width: 767px) 100vw, 46vw"
                     className="object-cover"
@@ -242,7 +243,7 @@ export default function HomePage() {
                 >
                   <Image
                     src={slabDetail.src}
-                    alt="Freshly floated concrete slab in a basement, drain grate and starter bars in place"
+                    alt="Freshly finished commercial ground slab with column starter cages and a trowel operator at the far edge"
                     fill
                     sizes="(max-width: 767px) 100vw, 30vw"
                     className="object-cover"

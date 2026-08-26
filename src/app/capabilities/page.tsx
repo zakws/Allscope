@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CTABand, Hairline } from "@/components/cinema/Editorial";
 import { Reveal } from "@/components/ui/Reveal";
-import { capabilityImages } from "@/content/projects-data.gen";
-import type { CapabilityImage } from "@/content/projects-data.gen";
+import { featurePhotos, type FeaturePhoto, type FeatureSlot } from "@/content/capability-data.gen";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -14,8 +13,8 @@ export const metadata: Metadata = pageMetadata({
   path: "/capabilities",
 });
 
-function capImage(assetId: string): CapabilityImage {
-  const img = capabilityImages.find((i) => i.assetId === assetId);
+function capImage(assetId: string): FeaturePhoto {
+  const img = featurePhotos[assetId as FeatureSlot];
   if (!img) throw new Error(`Missing capability image: ${assetId}`);
   return img;
 }
@@ -34,8 +33,8 @@ const services: Array<{
     title: "Structural placement",
     body: "Slabs on ground, rafts and footings. Suspended decks, beams and bands. Columns, walls and cores, placed to formwork built by others. The crew is Allscope's own full-time team, never outsourced labour, sized to the pour, with the sequence settled before the first truck is booked.",
     image: {
-      assetId: "ASC-CAP-001",
-      alt: "Concrete blinding being placed across a basement excavation, seen from above",
+      assetId: "cap-placement",
+      alt: "Wide suspended slab pour with the boom pump overhead and a power trowel operator in the foreground",
     },
   },
   {
@@ -44,8 +43,8 @@ const services: Array<{
     title: "Finishing",
     body: "The surface is the part everyone looks at for decades. Screeding and level control, machine and hand trowelled finishes, edges, falls and set-downs. The finish standard is agreed with the builder before the pour, not argued after it, and the surface gets a final check at handover.",
     image: {
-      assetId: "ASC-CAP-003",
-      alt: "Ride-on power trowel working a reflective machine-finished concrete slab",
+      assetId: "cap-finishing",
+      alt: "Crew screeding and trowelling a broad freshly poured basement ramp slab",
     },
   },
   {
@@ -54,8 +53,8 @@ const services: Array<{
     title: "Concrete pumping",
     body: "Allscope owns and operates its own truck-mounted boom pump, so there's no hire cost in the price and no extra party between the plan and the concrete. Boom position and exclusion zones are planned for each pour, and deliveries are sequenced to the rate the deck can take.",
     image: {
-      assetId: "OWN-CAP-146",
-      alt: "Concrete placed from a boom pump across a suspended slab, seen from above",
+      assetId: "cap-pumping",
+      alt: "Two agitator trucks feeding an Allscope branded boom pump at sunset while the crew places concrete",
     },
   },
   {
@@ -64,8 +63,8 @@ const services: Array<{
     title: "Pre-pour readiness",
     body: "Before placement, Allscope walks the deck and checks the work built by others: reinforcement complete, formwork edges and penetrations right, props in, access and levels confirmed. If something isn't right, the pour waits. A delayed pour costs less than a bad one.",
     image: {
-      assetId: "OWN-CAP-152",
-      alt: "Reinforcement mesh, membrane and starter bars laid out ready for concrete",
+      assetId: "cap-prepour",
+      alt: "Beam cages and top reinforcement fixed over metal deck formwork on a large suspended slab",
     },
   },
   {
@@ -74,8 +73,8 @@ const services: Array<{
     title: "Pour planning and supervision",
     body: "Most packages are priced straight from the drawings, with a site visit when the job calls for one. Scope, access and staging are read at tender, and on the day senior people run the pour, with the person who priced it reachable while concrete goes down.",
     image: {
-      assetId: "OWN-CAP-149",
-      alt: "A wide raft slab mid-pour, with the crew screeding behind the pump hose",
+      assetId: "cap-planning",
+      alt: "Tower crane rising from a formed lift core above a basement raft prepared with membrane and starter cages",
     },
   },
 ];
@@ -102,7 +101,7 @@ const boundary = {
 };
 
 export default function CapabilitiesPage() {
-  const aerial = capImage("ASC-CAP-004");
+  const aerial = capImage("cap-band");
 
   return (
     <>

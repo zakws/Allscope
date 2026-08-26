@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CTABand, Hairline, SectionHeading } from "@/components/cinema/Editorial";
 import { Reveal } from "@/components/ui/Reveal";
-import { capabilityImages } from "@/content/projects-data.gen";
+import { featurePhotos } from "@/content/capability-data.gen";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -71,8 +71,8 @@ const builders = [
   },
 ];
 
-const pourWide = capabilityImages.find((img) => img.assetId === "OWN-CAP-149");
-const driveway = capabilityImages.find((img) => img.assetId === "OWN-CAP-197");
+const pourWide = featurePhotos["about-pour"];
+const driveway = featurePhotos["about-completed"];
 
 export default function AboutPage() {
   return (
@@ -186,14 +186,14 @@ export default function AboutPage() {
                   <div className="relative aspect-square w-full overflow-hidden bg-surface-850">
                     <Image
                       src={pourWide.src}
-                      alt="A wide raft slab mid-pour, the crew screeding behind the pump hose"
+                      alt="Concreting crew working the wet edge of a large commercial slab pour over mesh reinforcement"
                       fill
                       sizes="(max-width: 639px) 100vw, 46vw"
                       className="object-cover"
                     />
                   </div>
                   <figcaption className="tech-label mt-3 text-ink-3">
-                    A raft pour under way. The crew on the deck is Allscope&rsquo;s own.
+                    A slab pour under way. The crew on the deck is Allscope&rsquo;s own.
                   </figcaption>
                 </figure>
               </Reveal>
@@ -202,14 +202,14 @@ export default function AboutPage() {
                   <div className="relative aspect-square w-full overflow-hidden bg-surface-850">
                     <Image
                       src={driveway.src}
-                      alt="A freshly finished charcoal driveway with a contrast border band and trench grate"
+                      alt="Curved freshly finished concrete path with a broom finish running through a landscaped garden"
                       fill
                       sizes="(max-width: 639px) 100vw, 46vw"
                       className="object-cover"
                     />
                   </div>
                   <figcaption className="tech-label mt-3 text-ink-3">
-                    External works: a finished driveway, edges formed and borders banded.
+                    External works: a finished path, curves formed and broom finished.
                   </figcaption>
                 </figure>
               </Reveal>

@@ -40,7 +40,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-18-33-41-19-.webp",
     "full": "/media/gallery/full/photo-2026-07-29-18-33-41-19-.webp",
-    "width": 945,
+    "width": 960,
     "height": 1000,
     "orientation": "portrait",
     "alt": "Expansive post-tensioned deck reinforcement stretching to the horizon with beam formwork and crews working in the distance.",
@@ -71,7 +71,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     "thumb": "/media/gallery/thumb/img-1040.webp",
     "full": "/media/gallery/full/img-1040.webp",
     "width": 1000,
-    "height": 687,
+    "height": 750,
     "orientation": "landscape",
     "alt": "Aerial view of a large basement raft pour with two concrete pump booms, queued agitator trucks and crews spreading wet concrete across the reinforced deck.",
     "caption": "Commercial concrete construction",
@@ -160,7 +160,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-18-33-40-9-.webp",
     "full": "/media/gallery/full/photo-2026-07-29-18-33-40-9-.webp",
-    "width": 554,
+    "width": 896,
     "height": 1000,
     "orientation": "portrait",
     "alt": "Overhead view of S-curved edge formwork with timber bracing around freshly placed concrete landscape terraces.",
@@ -230,7 +230,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-18-33-40-8-.webp",
     "full": "/media/gallery/full/photo-2026-07-29-18-33-40-8-.webp",
-    "width": 562,
+    "width": 561,
     "height": 1000,
     "orientation": "portrait",
     "alt": "Curved suspended deck with reinforcement and column starter bars over black formply, framed by scaffolding in golden hour light.",

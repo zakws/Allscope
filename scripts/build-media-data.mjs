@@ -44,7 +44,6 @@ import { fileURLToPath } from "node:url";
 import {
   FOLDER04_DIR,
   FOLDER04_JOB_SLUGS,
-  folder03CapabilityAssets,
   folder03ProjectAssets,
   folder04Decisions,
 } from "./new-media-sources.mjs";
@@ -493,32 +492,8 @@ const projects = plan.map((p) => {
 const aub = projects.find((p) => p.slug === "auburn-square");
 if (!aub) throw new Error("Auburn Square missing");
 
-const capabilityImages = [
-  ...capability.map((i) => ({
-    assetId: i.assetId,
-    src: `/media/capability/${i.assetId}.webp`,
-    width: i.width,
-    height: i.height,
-    orientation: i.orientation === "Landscape" ? "landscape" : i.orientation?.startsWith("Portrait") ? "portrait" : "square",
-    tier: tierOf(i),
-    caption: publicCaption(i.description),
-    purpose: i.purpose || "",
-  })),
-  ...folder03CapabilityAssets.map((a) => {
-    const d = dimsOf(a.assetId);
-    return {
-      assetId: a.assetId,
-      src: `/media/capability/${a.assetId}.webp`,
-      width: d.width,
-      height: d.height,
-      orientation:
-        d.width > d.height ? "landscape" : d.width === d.height ? "square" : "portrait",
-      tier: "B",
-      caption: a.caption,
-      purpose: a.purpose,
-    };
-  }),
-];
+// capabilityImages retired 25 Aug 2026: feature slots now come from
+// scripts/process-v2-features.mjs -> src/content/capability-data.gen.ts.
 
 // ---------- emit TypeScript ----------
 const ts = `/**
@@ -586,20 +561,9 @@ export interface ProjectRecord {
   gallery: GalleryImage[];
 }
 
-export interface CapabilityImage {
-  assetId: string;
-  src: string;
-  width: number;
-  height: number;
-  orientation: "landscape" | "portrait" | "square";
-  tier: "A" | "B" | "C" | "D";
-  caption: string;
-  purpose: string;
-}
 
 export const projectRecords: ProjectRecord[] = ${JSON.stringify(projects, null, 2)};
 
-export const capabilityImages: CapabilityImage[] = ${JSON.stringify(capabilityImages, null, 2)};
 `;
 
 fs.mkdirSync(path.join(SITE, "src", "content"), { recursive: true });
@@ -649,7 +613,6 @@ const renderCount = projects.reduce((a, p) => a + p.gallery.filter((g) => g.rend
 if (renderCount > 0) throw new Error(`render rows escaped the audit: ${renderCount}`);
 console.log(`projects: ${projects.length}`);
 console.log(`gallery images placed: ${projects.reduce((a, p) => a + p.gallery.length, 0)}`);
-console.log(`capability images: ${capabilityImages.length}`);
 console.log(`lead overrides (4K photography): ${[...LEAD_OVERRIDES.keys()].join(", ")}`);
 console.log(`excluded: ${excluded.length} assets`);
 for (const e of excluded) console.log(`  - ${e.assetId}: ${e.reason}`);

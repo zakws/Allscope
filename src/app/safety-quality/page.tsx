@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CTABand, Hairline, SectionHeading } from "@/components/cinema/Editorial";
 import { Reveal } from "@/components/ui/Reveal";
-import { capabilityImages } from "@/content/projects-data.gen";
+import { featurePhotos } from "@/content/capability-data.gen";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -21,15 +21,9 @@ const prePourChecks = [
   "Reinforcement and formwork interfaces",
 ];
 
-const basementDetail = capabilityImages.find(
-  (img) => img.assetId === "ASC-CAP-001",
-);
-const trowelDetail = capabilityImages.find(
-  (img) => img.assetId === "OWN-CAP-169",
-);
-const slabDetail = capabilityImages.find(
-  (img) => img.assetId === "OWN-CAP-166",
-);
+const basementDetail = featurePhotos["safety-crew"];
+const trowelDetail = featurePhotos["safety-trowel"];
+const slabDetail = featurePhotos["safety-slab"];
 
 export default function SafetyQualityPage() {
   return (
@@ -89,12 +83,12 @@ export default function SafetyQualityPage() {
                   src={basementDetail.src}
                   width={basementDetail.width}
                   height={basementDetail.height}
-                  alt="Two concreters working fresh concrete around a recessed set-down in an excavated basement, with timber formwork and a small excavator behind them"
+                  alt="Harnessed concreters screeding wet concrete along a narrow elevated walkway between timber edge forms"
                   sizes="(min-width: 1024px) 26rem, 100vw"
                   className="w-full"
                 />
                 <figcaption className="tech-label mt-3 text-ink-3">
-                  Basement works · blinding down ahead of the structure
+                  Edge work under harness · screeding an elevated walkway
                 </figcaption>
               </figure>
             </Reveal>
@@ -135,12 +129,12 @@ export default function SafetyQualityPage() {
                   src={trowelDetail.src}
                   width={trowelDetail.width}
                   height={trowelDetail.height}
-                  alt="Machine trowelling a fresh concrete slab, with the boom pump standing behind"
+                  alt="Two ride-on trowel operators finishing a large fresh commercial slab around column starter cages"
                   sizes="(min-width: 1024px) 26rem, 100vw"
                   className="w-full"
                 />
                 <figcaption className="tech-label mt-3 text-ink-3">
-                  Finishing follows the pour down the deck
+                  Finishing follows the pour across the slab
                 </figcaption>
               </figure>
             </Reveal>
@@ -179,12 +173,12 @@ export default function SafetyQualityPage() {
                   src={slabDetail.src}
                   width={slabDetail.width}
                   height={slabDetail.height}
-                  alt="Freshly floated basement slab with a drain grate and starter bars in place"
+                  alt="Ride-on power trowel on a freshly finished concrete slab with starter bars along the perimeter wall"
                   sizes="(min-width: 1024px) 26rem, 100vw"
                   className="w-full"
                 />
                 <figcaption className="tech-label mt-3 text-ink-3">
-                  A floated slab, level held to handover
+                  A machine-finished slab, level held to handover
                 </figcaption>
               </figure>
             </Reveal>

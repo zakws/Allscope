@@ -23,7 +23,7 @@ const sharp = require("sharp");
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
-const SRC = path.resolve(SITE, "..", "ALLSCOPE_ENHANCED_4K", "ALLSCOPE_ENHANCED_4K");
+const SRC = path.resolve(SITE, "..", "ALLSCOPE_ENHANCED_4K_V2", "ALLSCOPE_ENHANCED_4K");
 const OUT_T = path.join(SITE, "public", "media", "gallery", "thumb");
 const OUT_F = path.join(SITE, "public", "media", "gallery", "full");
 
