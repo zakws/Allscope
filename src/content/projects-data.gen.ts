@@ -51,7 +51,10 @@ export interface ProjectRecord {
   legacyPage: string | null;
   status: ProjectStatus;
   statusNote: string | null;
-  lead: {
+  /** Approved page copy override; when absent the page composes its own. */
+  overview?: string;
+  /** null = text-led presentation (no cleared photograph yet). */
+  lead: null | {
     assetId: string;
     /** Overlay label for the lead (e.g. "Project context"); null for none. */
     label: string | null;
@@ -65,6 +68,21 @@ export interface ProjectRecord {
 
 
 export const projectRecords: ProjectRecord[] = [
+  {
+    "slug": "chalmers-hotel-mascot",
+    "order": 0,
+    "code": "CHM",
+    "name": "Chalmers Hotel, Mascot",
+    "location": "Mascot",
+    "sector": "hospitality",
+    "team": "Kuatro Build",
+    "legacyPage": null,
+    "status": "under-construction",
+    "statusNote": "Currently under construction with Kuatro Build",
+    "lead": null,
+    "gallery": [],
+    "overview": "Allscope Concrete is currently delivering concrete works at Chalmers Hotel in Mascot for Kuatro Build. The 12-storey development at 2 Chalmers Crescent is planned to include 144 guest rooms and supporting hospitality facilities."
+  },
   {
     "slug": "kennards-macquarie-park",
     "order": 1,
@@ -512,31 +530,20 @@ export const projectRecords: ProjectRecord[] = [
     "name": "Oran Park Hotel",
     "location": "Oran Park",
     "sector": "hospitality",
-    "team": "Momento Hospitality / Versatile / Archebiosis",
+    "team": "Momento Hospitality / Versatile Construction / Archebiosis Architects",
     "legacyPage": "https://allscopeconcrete.com.au/oran-park-hotel/",
     "status": "completed",
     "statusNote": null,
     "lead": {
-      "assetId": "OJ4-OPH-01",
-      "label": null,
-      "src": "/media/leads/OJ4-OPH-01.webp",
-      "width": 2400,
-      "height": 1800,
-      "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
+      "assetId": "OWNER-OPH-RENDER",
+      "label": "Artist's impression",
+      "src": "/media/leads/oran-park-hotel-owner-render.webp",
+      "width": 2048,
+      "height": 1024,
+      "preferredCrop": "native 2:1; do not crop the hotel name"
     },
-    "gallery": [
-      {
-        "assetId": "OJ4-OPH-02",
-        "src": "/media/projects/oran-park-hotel/OJ4-OPH-02.webp",
-        "width": 2000,
-        "height": 1300,
-        "orientation": "landscape",
-        "tier": "A",
-        "render": false,
-        "contextOnly": false,
-        "caption": "The off-form concrete sign wall at the hotel entry."
-      }
-    ]
+    "gallery": [],
+    "overview": "Allscope Concrete completed concrete works for Versatile Construction on Oran Park Hotel, a three-level hospitality and entertainment precinct at 81 Central Avenue, Oran Park. Construction began in November 2021 and the venue is now open. The 7,500 square metre venue brings together dining, entertainment and event spaces across three levels. Allscope's role was the concrete works package for Versatile Construction."
   },
   {
     "slug": "asha-westmead",
@@ -1395,6 +1402,36 @@ export const projectRecords: ProjectRecord[] = [
         "caption": "The entry and concrete forecourt at BP Oberon."
       }
     ]
+  },
+  {
+    "slug": "bunnings-rose-bay",
+    "order": 17,
+    "code": "BRB",
+    "name": "Bunnings Rose Bay",
+    "location": "Rose Bay",
+    "sector": "retail-fuel",
+    "team": "Delivery team not recorded",
+    "legacyPage": null,
+    "status": "completed",
+    "statusNote": null,
+    "lead": null,
+    "gallery": [],
+    "overview": "Allscope Concrete delivered concrete works for the Bunnings store at 538-544 Old South Head Road, Rose Bay."
+  },
+  {
+    "slug": "al-noori-muslim-school",
+    "order": 18,
+    "code": "ANS",
+    "name": "Al Noori Muslim School",
+    "location": "Greenacre",
+    "sector": "education",
+    "team": "Delivery team not recorded",
+    "legacyPage": null,
+    "status": "completed",
+    "statusNote": null,
+    "lead": null,
+    "gallery": [],
+    "overview": "Allscope Concrete delivered concrete works at Al Noori Muslim School in Greenacre."
   }
 ];
 

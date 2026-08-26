@@ -128,17 +128,22 @@ export const folder04Decisions = [
     caption: "Project context: the completed T1 departures concourse.",
   },
 
-  // 06 — Oran Park Hotel
+  // 06 — Oran Park Hotel: both folder-04 photos RETIRED 26 Aug 2026 per the
+  // owner correction. The facade shows a DIFFERENT BUILDING; the sign wall
+  // cannot be verified as 81 Central Avenue and is staged pending
+  // confirmation. The corrected owner render is applied in
+  // scripts/project-updates-2026-08-26.mjs.
   {
     outputName: "ASC-ORAN-PARK-HOTEL-01-CONCRETE-FACADE-NATIVE-4K.jpg",
     assetId: "OJ4-OPH-01",
-    role: "lead",
+    role: "skip",
+    skipReason: "wrong building (owner correction 26 Aug 2026): not Oran Park Hotel at 81 Central Avenue",
   },
   {
     outputName: "ASC-ORAN-PARK-HOTEL-02-CONCRETE-SIGN-WALL-NATIVE-4K-CROPPED.jpg",
     assetId: "OJ4-OPH-02",
-    role: "gallery",
-    caption: "The off-form concrete sign wall at the hotel entry.",
+    role: "skip",
+    skipReason: "unverified location (owner correction 26 Aug 2026): staged pending confirmation it is 81 Central Avenue",
   },
 
   // 07 — Asha, Westmead

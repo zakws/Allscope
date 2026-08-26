@@ -297,7 +297,7 @@ export default function HomePage() {
                   data-inview="true"
                 >
                   <Image
-                    src={onsite.lead.src}
+                    src={onsite.lead!.src}
                     alt={`${onsite.name}, ${onsite.location}, an Allscope Concrete project currently on site`}
                     fill
                     sizes="(max-width: 767px) 100vw, 61vw"

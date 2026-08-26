@@ -168,3 +168,17 @@ masters were deleted by `scripts/clean-orphan-media.mjs`.
 found for it). Its page keeps the existing library photography (7
 photographs) after the render OTP-001 was removed; the lead remains the
 registered twilight photograph ASC-OTP-004.
+
+## Targeted update, 26 Aug 2026 (handover: Allscope-Website-Project-Update-2026-08-26)
+
+| Asset | Placement | Rights status |
+|---|---|---|
+| 06-Oran-Park-Hotel-CORRECTED/01-OWNER-SUPPLIED-correct-oran-park-hotel-render.png | Oran Park Hotel lead (native 2:1, "Artist's impression" label) | Owner-supplied, cleared |
+| OJ4-OPH-01 (previous Oran lead) | REMOVED everywhere | Wrong building per owner correction |
+| OJ4-OPH-02 (sign wall) | REMOVED; staged | Location unverified as 81 Central Avenue |
+| Chalmers 01/02/05 + render 06 or 07 | STAGED (preferred order recorded) | Kuatro reuse permission required |
+| Oran supporting: Woodburn exterior (credit: Steven Woodburn), 2x Versatile progress, 2x venue interiors | STAGED | Permission required; retain photographer credit |
+| Bunnings 01 exterior / 02 interior | STAGED | Directory-sourced; permission required |
+| Al Noori 01/02 (2021 pour), 03/04 (campus) | STAGED | School approval + Allscope phase confirmation required; no student-activity imagery |
+
+New projects launched text-led (no substituted photography): Chalmers Hotel Mascot, Bunnings Rose Bay, Al Noori Muslim School.

@@ -10,7 +10,7 @@ const GALLERY_ROW_CAP = 5;
 
 const STATUS_LABEL: Record<ProjectRecord["status"], string | null> = {
   completed: null,
-  "under-construction": "Under construction",
+  "under-construction": "Current project",
   "stage-2-under-construction": "Stage 2 under construction",
 };
 
@@ -49,6 +49,18 @@ export function ProjectCard({
   return (
     <article className="pcard group relative">
       <div className="pcard-img relative aspect-[16/10] overflow-hidden bg-surface-850">
+        {project.lead === null ? (
+          /* Text-led plate: no cleared photograph yet. Never a substituted
+             image from another job. */
+          <span className="grid-texture absolute inset-0 flex flex-col justify-between p-5">
+            <span className="text-[0.68rem] uppercase tracking-[0.14em] text-ink-3">
+              Allscope Concrete
+            </span>
+            <span className="display text-2xl leading-tight text-concrete-300 md:text-3xl">
+              {project.name}
+            </span>
+          </span>
+        ) : (
         <Image
           src={project.lead.src}
           alt={`${project.name}, ${project.location}, an Allscope Concrete project`}
@@ -57,12 +69,13 @@ export function ProjectCard({
           priority={priority}
           className="object-cover"
         />
+        )}
         {status && (
           <span className="absolute left-4 top-4 z-10 bg-bg-950/80 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-ink-2 backdrop-blur-sm">
             {status}
           </span>
         )}
-        {project.lead.label && (
+        {project.lead?.label && (
           <span className="absolute bottom-4 left-4 z-10 bg-bg-950/80 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-ink-2 backdrop-blur-sm">
             {project.lead.label}
           </span>

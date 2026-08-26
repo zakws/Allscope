@@ -47,6 +47,7 @@ import {
   folder03ProjectAssets,
   folder04Decisions,
 } from "./new-media-sources.mjs";
+import { newProjects, oranParkCorrection } from "./project-updates-2026-08-26.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
@@ -492,6 +493,21 @@ const projects = plan.map((p) => {
 const aub = projects.find((p) => p.slug === "auburn-square");
 if (!aub) throw new Error("Auburn Square missing");
 
+// ---- Targeted content update, 26 Aug 2026 (see project-updates module) ----
+{
+  const oph = projects.find((p) => p.slug === oranParkCorrection.slug);
+  if (!oph) throw new Error("Oran Park Hotel missing");
+  oph.lead = oranParkCorrection.lead;
+  oph.gallery = oranParkCorrection.gallery;
+  oph.overview = oranParkCorrection.overview;
+  oph.team = oranParkCorrection.team;
+}
+for (const np of newProjects) {
+  if (projects.some((p) => p.slug === np.slug)) throw new Error("duplicate slug " + np.slug);
+  projects.push({ ...np });
+}
+projects.sort((a, b) => a.order - b.order);
+
 // capabilityImages retired 25 Aug 2026: feature slots now come from
 // scripts/process-v2-features.mjs -> src/content/capability-data.gen.ts.
 
@@ -549,7 +565,10 @@ export interface ProjectRecord {
   legacyPage: string | null;
   status: ProjectStatus;
   statusNote: string | null;
-  lead: {
+  /** Approved page copy override; when absent the page composes its own. */
+  overview?: string;
+  /** null = text-led presentation (no cleared photograph yet). */
+  lead: null | {
     assetId: string;
     /** Overlay label for the lead (e.g. "Project context"); null for none. */
     label: string | null;

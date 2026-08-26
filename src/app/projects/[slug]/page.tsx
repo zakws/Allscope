@@ -44,6 +44,7 @@ const BOUNDARIES = [
 ];
 
 function overview(p: ProjectRecord): string {
+  if (p.overview) return p.overview;
   const sentences: string[] = [];
   if (p.status === "under-construction") {
     sentences.push(
@@ -88,6 +89,7 @@ export async function generateMetadata(
     description: metaDescription(record),
     path: `/projects/${record.slug}`,
   });
+  if (!record.lead) return meta; // text-led page: default site OG image
   return {
     ...meta,
     openGraph: {
@@ -125,9 +127,18 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
         ])}
       />
 
-      {/* Full-bleed lead image with the identity overlaid on the lower edge */}
+      {/* Full-bleed lead image with the identity overlaid on the lower edge.
+          Projects without a cleared photograph run the same identity block on
+          a quiet textured band instead (never a substituted image). */}
       <section className="relative overflow-hidden bg-surface-850">
-        <div className="relative aspect-[4/5] max-h-[72svh] min-h-[420px] w-full sm:aspect-[16/9] lg:aspect-[21/9]">
+        <div
+          className={
+            record.lead
+              ? "relative aspect-[4/5] max-h-[72svh] min-h-[420px] w-full sm:aspect-[16/9] lg:aspect-[21/9]"
+              : "grid-texture relative min-h-[320px] w-full md:min-h-[380px]"
+          }
+        >
+          {record.lead && (
           <Image
             src={record.lead.src}
             alt={`${record.name}, ${record.location}, an Allscope Concrete project`}
@@ -136,11 +147,12 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
             sizes="100vw"
             className="object-cover"
           />
+          )}
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-bg-950 via-bg-950/25 to-transparent"
           />
-          {record.lead.label && (
+          {record.lead?.label && (
             <span className="absolute right-5 top-24 z-10 bg-bg-950/80 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-ink-2 backdrop-blur-sm">
               {record.lead.label}
             </span>
