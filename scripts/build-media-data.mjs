@@ -48,6 +48,7 @@ import {
   folder04Decisions,
 } from "./new-media-sources.mjs";
 import { newProjects, oranParkCorrection } from "./project-updates-2026-08-26.mjs";
+import { photoPack, supersededGalleryAssets } from "./photo-pack-2026-08-29.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
@@ -506,6 +507,66 @@ for (const np of newProjects) {
   if (projects.some((p) => p.slug === np.slug)) throw new Error("duplicate slug " + np.slug);
   projects.push({ ...np });
 }
+
+// ---- Final photo pack, 29 Aug 2026 (see photo-pack module for the full
+// integration accounting, duplicate resolution and the El Jannah hold) ----
+const PACK_DIMS_PATH = path.join(HERE, "photo-pack-dims.json");
+const packDims = fs.existsSync(PACK_DIMS_PATH)
+  ? JSON.parse(fs.readFileSync(PACK_DIMS_PATH, "utf8"))
+  : null;
+function packDimsOf(assetId) {
+  const d = packDims?.[assetId];
+  if (!d) {
+    throw new Error(
+      `no installed dimensions for ${assetId} — run: node scripts/install-photo-pack-2026-08-29.mjs`,
+    );
+  }
+  return d;
+}
+/** Slugs whose register-era lead is replaced by a pack lead (their old lead
+ *  files retire; clean-orphan-media.mjs removes them after regeneration). */
+const PACK_LEAD_SLUGS = new Set();
+for (const pk of photoPack) {
+  const p = projects.find((x) => x.slug === pk.slug);
+  if (!p) throw new Error(`photo-pack targets an unknown slug: ${pk.slug}`);
+  if (pk.lead) {
+    const d = packDimsOf(pk.lead.assetId);
+    p.lead = {
+      assetId: pk.lead.assetId,
+      label: null,
+      src: `/media/leads/${pk.lead.assetId}.webp`,
+      width: d.width,
+      height: d.height,
+      preferredCrop: "",
+      alt: pk.lead.alt,
+      objectPosition: pk.lead.objectPosition,
+    };
+    PACK_LEAD_SLUGS.add(pk.slug);
+  }
+  const packRows = pk.gallery.map((g) => {
+    const d = packDimsOf(g.assetId);
+    return {
+      assetId: g.assetId,
+      src: `/media/projects/${pk.slug}/${g.assetId}.webp`,
+      width: d.width,
+      height: d.height,
+      orientation:
+        d.width > d.height ? "landscape" : d.width === d.height ? "square" : "portrait",
+      tier: "A",
+      render: Boolean(g.render),
+      contextOnly: false,
+      caption: "",
+      alt: g.alt,
+    };
+  });
+  p.gallery = [...packRows, ...p.gallery];
+}
+// Superseded rows retire site-wide (Asha's pre-existing duplicate pair has
+// no pack entry of its own, so this cannot live inside the loop above).
+for (const p of projects) {
+  p.gallery = p.gallery.filter((g) => !supersededGalleryAssets.has(g.assetId));
+}
+
 projects.sort((a, b) => a.order - b.order);
 
 // capabilityImages retired 25 Aug 2026: feature slots now come from
@@ -546,11 +607,14 @@ export interface GalleryImage {
   /** Register quality tier: A hero-capable … D detail/mobile only. */
   tier: "A" | "B" | "C" | "D";
   /** Architectural render — must carry an "Artist's impression" label.
-   *  (No published image sets this since the 20 Aug 2026 image audit.) */
+   *  (One authored exception since 29 Aug 2026: the Chalmers design render,
+   *  last in its gallery; everything else remains photography.) */
   render: boolean;
   /** Context-only: captions must not claim project proof or identify people. */
   contextOnly: boolean;
   caption: string;
+  /** Exact alt text from the supplying pack's manifest, when provided. */
+  alt?: string;
 }
 
 export interface ProjectRecord {
@@ -576,6 +640,10 @@ export interface ProjectRecord {
     width: number;
     height: number;
     preferredCrop: string;
+    /** Exact alt text from the supplying pack's manifest, when provided. */
+    alt?: string;
+    /** Manifest focal position, applied wherever the design crops the lead. */
+    objectPosition?: string;
   };
   gallery: GalleryImage[];
 }
@@ -594,6 +662,7 @@ const jobs = [];
 for (const l of leads) {
   if (EXCLUDED_PROJECTS.has(l.projectSlug)) continue;
   if (LEAD_OVERRIDES.has(l.projectSlug)) continue; // replaced by a 4K lead
+  if (PACK_LEAD_SLUGS.has(l.projectSlug)) continue; // replaced by a 29 Aug pack lead
   jobs.push({
     src: path.join(LIB, l.relativePath),
     out: `public/media/leads/${l.websiteFilename.replace(/\.jpe?g$/i, ".webp")}`,
@@ -628,15 +697,26 @@ for (const i of capability) {
 fs.writeFileSync(path.join(HERE, "media-jobs.json"), JSON.stringify(jobs, null, 1), "utf8");
 
 if (UNKNOWN_SECTORS.length) throw new Error("Unmapped sectors: " + UNKNOWN_SECTORS.join("; "));
-const renderCount = projects.reduce((a, p) => a + p.gallery.filter((g) => g.render).length, 0);
-if (renderCount > 0) throw new Error(`render rows escaped the audit: ${renderCount}`);
+// Render policy (20 Aug 2026 audit, amended 29 Aug 2026): photography only,
+// with one authored exception — the Chalmers design render sits LAST in its
+// gallery and carries the "Artist's impression" label. Anything else throws.
+const ALLOWED_RENDERS = new Set(["PK-CHM-05"]);
+const renderRows = projects.flatMap((p) => p.gallery.filter((g) => g.render));
+const rogueRenders = renderRows.filter((g) => !ALLOWED_RENDERS.has(g.assetId));
+if (rogueRenders.length > 0) {
+  throw new Error(`render rows escaped the audit: ${rogueRenders.map((g) => g.assetId).join(", ")}`);
+}
+const chm = projects.find((p) => p.slug === "chalmers-hotel-mascot");
+if (chm.lead.assetId !== "PK-CHM-01" || chm.gallery.at(-1)?.assetId !== "PK-CHM-05") {
+  throw new Error("Chalmers must lead with the live structural photo and end on the labelled render");
+}
 console.log(`projects: ${projects.length}`);
 console.log(`gallery images placed: ${projects.reduce((a, p) => a + p.gallery.length, 0)}`);
 console.log(`lead overrides (4K photography): ${[...LEAD_OVERRIDES.keys()].join(", ")}`);
 console.log(`excluded: ${excluded.length} assets`);
 for (const e of excluded) console.log(`  - ${e.assetId}: ${e.reason}`);
 console.log(`media jobs (library): ${jobs.length}`);
-console.log(`renders published: ${renderCount}`);
+console.log(`renders published (authored exceptions only): ${renderRows.length}`);
 for (const p of projects) {
   console.log(
     ` ${String(p.order).padStart(2)} ${p.slug.padEnd(30)} ${p.sector.padEnd(17)} ${String(p.gallery.length).padStart(2)} imgs  ${p.status}`,

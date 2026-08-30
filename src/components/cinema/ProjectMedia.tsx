@@ -63,11 +63,12 @@ export function ProjectCard({
         ) : (
         <Image
           src={project.lead.src}
-          alt={`${project.name}, ${project.location}, an Allscope Concrete project`}
+          alt={project.lead.alt ?? `${project.name}, ${project.location}, an Allscope Concrete project`}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
           priority={priority}
           className="object-cover"
+          style={project.lead.objectPosition ? { objectPosition: project.lead.objectPosition } : undefined}
         />
         )}
         {status && (
@@ -179,7 +180,7 @@ function GalleryFigure({ img, solo = false }: { img: GalleryImage; solo?: boolea
       >
         <Image
           src={img.src}
-          alt={img.caption ? "" : "Project photograph"}
+          alt={img.alt ?? (img.caption ? "" : "Project photograph")}
           fill
           sizes={
             !portrait

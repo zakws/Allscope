@@ -1,0 +1,78 @@
+{
+ "PK-OPH-01": {
+  "width": 1920,
+  "height": 1280
+ },
+ "PK-OPH-02": {
+  "width": 1200,
+  "height": 600
+ },
+ "PK-OPH-03": {
+  "width": 1000,
+  "height": 1000
+ },
+ "PK-OPH-04": {
+  "width": 1000,
+  "height": 1000
+ },
+ "PK-OPH-05": {
+  "width": 1905,
+  "height": 480
+ },
+ "PK-OTW-01": {
+  "width": 1199,
+  "height": 853
+ },
+ "PK-VRK-02": {
+  "width": 1519,
+  "height": 600
+ },
+ "PK-VRK-04": {
+  "width": 1280,
+  "height": 960
+ },
+ "PK-BPP-02": {
+  "width": 1920,
+  "height": 1280
+ },
+ "PK-BPO-01": {
+  "width": 1920,
+  "height": 897
+ },
+ "PK-BPO-02": {
+  "width": 1920,
+  "height": 1440
+ },
+ "PK-BRB-01": {
+  "width": 1920,
+  "height": 1080
+ },
+ "PK-ANS-01": {
+  "width": 1600,
+  "height": 1128
+ },
+ "PK-ANS-02": {
+  "width": 1600,
+  "height": 1157
+ },
+ "PK-CHM-01": {
+  "width": 800,
+  "height": 533
+ },
+ "PK-CHM-02": {
+  "width": 800,
+  "height": 533
+ },
+ "PK-CHM-03": {
+  "width": 800,
+  "height": 533
+ },
+ "PK-CHM-04": {
+  "width": 1024,
+  "height": 1536
+ },
+ "PK-CHM-05": {
+  "width": 1448,
+  "height": 1920
+ }
+}

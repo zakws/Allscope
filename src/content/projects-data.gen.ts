@@ -32,11 +32,14 @@ export interface GalleryImage {
   /** Register quality tier: A hero-capable … D detail/mobile only. */
   tier: "A" | "B" | "C" | "D";
   /** Architectural render — must carry an "Artist's impression" label.
-   *  (No published image sets this since the 20 Aug 2026 image audit.) */
+   *  (One authored exception since 29 Aug 2026: the Chalmers design render,
+   *  last in its gallery; everything else remains photography.) */
   render: boolean;
   /** Context-only: captions must not claim project proof or identify people. */
   contextOnly: boolean;
   caption: string;
+  /** Exact alt text from the supplying pack's manifest, when provided. */
+  alt?: string;
 }
 
 export interface ProjectRecord {
@@ -62,6 +65,10 @@ export interface ProjectRecord {
     width: number;
     height: number;
     preferredCrop: string;
+    /** Exact alt text from the supplying pack's manifest, when provided. */
+    alt?: string;
+    /** Manifest focal position, applied wherever the design crops the lead. */
+    objectPosition?: string;
   };
   gallery: GalleryImage[];
 }
@@ -79,8 +86,66 @@ export const projectRecords: ProjectRecord[] = [
     "legacyPage": null,
     "status": "under-construction",
     "statusNote": "Currently under construction with Kuatro Build",
-    "lead": null,
-    "gallery": [],
+    "lead": {
+      "assetId": "PK-CHM-01",
+      "label": null,
+      "src": "/media/leads/PK-CHM-01.webp",
+      "width": 800,
+      "height": 533,
+      "preferredCrop": "",
+      "alt": "Current reinforcement and structural works at Chalmers Hotel in Mascot",
+      "objectPosition": "50% 55%"
+    },
+    "gallery": [
+      {
+        "assetId": "PK-CHM-02",
+        "src": "/media/projects/chalmers-hotel-mascot/PK-CHM-02.webp",
+        "width": 800,
+        "height": 533,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Current construction-site overview at Chalmers Hotel in Mascot"
+      },
+      {
+        "assetId": "PK-CHM-03",
+        "src": "/media/projects/chalmers-hotel-mascot/PK-CHM-03.webp",
+        "width": 800,
+        "height": 533,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Reinforcement and formwork at Chalmers Hotel in Mascot"
+      },
+      {
+        "assetId": "PK-CHM-04",
+        "src": "/media/projects/chalmers-hotel-mascot/PK-CHM-04.webp",
+        "width": 1024,
+        "height": 1536,
+        "orientation": "portrait",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Deck preparation and reinforcement at Chalmers Hotel in Mascot"
+      },
+      {
+        "assetId": "PK-CHM-05",
+        "src": "/media/projects/chalmers-hotel-mascot/PK-CHM-05.webp",
+        "width": 1448,
+        "height": 1920,
+        "orientation": "portrait",
+        "tier": "A",
+        "render": true,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Architectural design render of Chalmers Hotel in Mascot"
+      }
+    ],
     "overview": "Allscope Concrete is currently delivering concrete works at Chalmers Hotel in Mascot for Kuatro Build. The 12-storey development at 2 Chalmers Crescent is planned to include 144 guest rooms and supporting hospitality facilities."
   },
   {
@@ -535,14 +600,65 @@ export const projectRecords: ProjectRecord[] = [
     "status": "completed",
     "statusNote": null,
     "lead": {
-      "assetId": "OWNER-OPH-RENDER",
-      "label": "Artist's impression",
-      "src": "/media/leads/oran-park-hotel-owner-render.webp",
-      "width": 2048,
-      "height": 1024,
-      "preferredCrop": "native 2:1; do not crop the hotel name"
+      "assetId": "PK-OPH-01",
+      "label": null,
+      "src": "/media/leads/PK-OPH-01.webp",
+      "width": 1920,
+      "height": 1280,
+      "preferredCrop": "",
+      "alt": "Completed Oran Park Hotel exterior",
+      "objectPosition": "50% 52%"
     },
-    "gallery": [],
+    "gallery": [
+      {
+        "assetId": "PK-OPH-02",
+        "src": "/media/projects/oran-park-hotel/PK-OPH-02.webp",
+        "width": 1200,
+        "height": 600,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Wide street view of the completed Oran Park Hotel"
+      },
+      {
+        "assetId": "PK-OPH-03",
+        "src": "/media/projects/oran-park-hotel/PK-OPH-03.webp",
+        "width": 1000,
+        "height": 1000,
+        "orientation": "square",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Oran Park Hotel name formed in a concrete wall"
+      },
+      {
+        "assetId": "PK-OPH-04",
+        "src": "/media/projects/oran-park-hotel/PK-OPH-04.webp",
+        "width": 1000,
+        "height": 1000,
+        "orientation": "square",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Concrete side elevation and landscaping at Oran Park Hotel"
+      },
+      {
+        "assetId": "PK-OPH-05",
+        "src": "/media/projects/oran-park-hotel/PK-OPH-05.webp",
+        "width": 1905,
+        "height": 480,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Exposed concrete facade at Oran Park Hotel"
+      }
+    ],
     "overview": "Allscope Concrete completed concrete works for Versatile Construction on Oran Park Hotel, a three-level hospitality and entertainment precinct at 81 Central Avenue, Oran Park. Construction began in November 2021 and the venue is now open. The 7,500 square metre venue brings together dining, entertainment and event spaces across three levels. Allscope's role was the concrete works package for Versatile Construction."
   },
   {
@@ -599,28 +715,6 @@ export const projectRecords: ProjectRecord[] = [
         "caption": "Podium lawn and landscaped space."
       },
       {
-        "assetId": "ASC-ASH-008",
-        "src": "/media/projects/asha-westmead/ASC-ASH-008.webp",
-        "width": 1600,
-        "height": 1068,
-        "orientation": "landscape",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Rooftop terrace and finished hardscape."
-      },
-      {
-        "assetId": "ASC-ASH-010",
-        "src": "/media/projects/asha-westmead/ASC-ASH-010.webp",
-        "width": 1600,
-        "height": 1068,
-        "orientation": "landscape",
-        "tier": "C",
-        "render": false,
-        "contextOnly": false,
-        "caption": "Façade, stair and material detail."
-      },
-      {
         "assetId": "OJ4-ASH-01",
         "src": "/media/projects/asha-westmead/OJ4-ASH-01.webp",
         "width": 2000,
@@ -656,12 +750,14 @@ export const projectRecords: ProjectRecord[] = [
     "status": "completed",
     "statusNote": null,
     "lead": {
-      "assetId": "ASC-OTW-003",
+      "assetId": "PK-OTW-01",
       "label": null,
-      "src": "/media/leads/PROJECT-08-ONE-THE-WATERFRONT-01.webp",
-      "width": 2133,
-      "height": 1600,
-      "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
+      "src": "/media/leads/PK-OTW-01.webp",
+      "width": 1199,
+      "height": 853,
+      "preferredCrop": "",
+      "alt": "Completed One the Waterfront apartment building at Wentworth Point",
+      "objectPosition": "50% 50%"
     },
     "gallery": [
       {
@@ -873,6 +969,30 @@ export const projectRecords: ProjectRecord[] = [
       "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
     },
     "gallery": [
+      {
+        "assetId": "PK-VRK-02",
+        "src": "/media/projects/view-rockdale/PK-VRK-02.webp",
+        "width": 1519,
+        "height": 600,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "View Rockdale exterior at dusk"
+      },
+      {
+        "assetId": "PK-VRK-04",
+        "src": "/media/projects/view-rockdale/PK-VRK-04.webp",
+        "width": 1280,
+        "height": 960,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Architectural courtyard view at View Rockdale"
+      },
       {
         "assetId": "ASC-VRK-004",
         "src": "/media/projects/view-rockdale/ASC-VRK-004.webp",
@@ -1303,6 +1423,18 @@ export const projectRecords: ProjectRecord[] = [
     },
     "gallery": [
       {
+        "assetId": "PK-BPP-02",
+        "src": "/media/projects/bp-prestons/PK-BPP-02.webp",
+        "width": 1920,
+        "height": 1280,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Aerial overview of BP Prestons and its surrounding industrial area"
+      },
+      {
         "assetId": "OJ4-BPP-01",
         "src": "/media/projects/bp-prestons/OJ4-BPP-01.webp",
         "width": 2000,
@@ -1382,24 +1514,27 @@ export const projectRecords: ProjectRecord[] = [
     "status": "completed",
     "statusNote": null,
     "lead": {
-      "assetId": "ASC-BPO-001",
+      "assetId": "PK-BPO-01",
       "label": null,
-      "src": "/media/leads/PROJECT-16-BP-OBERON-01.webp",
-      "width": 1200,
-      "height": 630,
-      "preferredCrop": "16:9 desktop / 4:5 mobile; protect main structure and a quiet text zone"
+      "src": "/media/leads/PK-BPO-01.webp",
+      "width": 1920,
+      "height": 897,
+      "preferredCrop": "",
+      "alt": "Completed BP Oberon service station, forecourt and concrete apron",
+      "objectPosition": "50% 50%"
     },
     "gallery": [
       {
-        "assetId": "OJ4-BPO-01",
-        "src": "/media/projects/bp-oberon/OJ4-BPO-01.webp",
-        "width": 2000,
-        "height": 1746,
+        "assetId": "PK-BPO-02",
+        "src": "/media/projects/bp-oberon/PK-BPO-02.webp",
+        "width": 1920,
+        "height": 1440,
         "orientation": "landscape",
-        "tier": "B",
+        "tier": "A",
         "render": false,
         "contextOnly": false,
-        "caption": "The entry and concrete forecourt at BP Oberon."
+        "caption": "",
+        "alt": "BP Oberon entrance and concrete apron"
       }
     ]
   },
@@ -1414,7 +1549,16 @@ export const projectRecords: ProjectRecord[] = [
     "legacyPage": null,
     "status": "completed",
     "statusNote": null,
-    "lead": null,
+    "lead": {
+      "assetId": "PK-BRB-01",
+      "label": null,
+      "src": "/media/leads/PK-BRB-01.webp",
+      "width": 1920,
+      "height": 1080,
+      "preferredCrop": "",
+      "alt": "Bunnings Rose Bay building on Old South Head Road",
+      "objectPosition": "50% 50%"
+    },
     "gallery": [],
     "overview": "Allscope Concrete delivered concrete works for the Bunnings store at 538-544 Old South Head Road, Rose Bay."
   },
@@ -1429,8 +1573,30 @@ export const projectRecords: ProjectRecord[] = [
     "legacyPage": null,
     "status": "completed",
     "statusNote": null,
-    "lead": null,
-    "gallery": [],
+    "lead": {
+      "assetId": "PK-ANS-01",
+      "label": null,
+      "src": "/media/leads/PK-ANS-01.webp",
+      "width": 1600,
+      "height": 1128,
+      "preferredCrop": "",
+      "alt": "Suspended-slab concrete pour at Al Noori Muslim School",
+      "objectPosition": "50% 58%"
+    },
+    "gallery": [
+      {
+        "assetId": "PK-ANS-02",
+        "src": "/media/projects/al-noori-muslim-school/PK-ANS-02.webp",
+        "width": 1600,
+        "height": 1157,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Concrete booms, reinforcement and slab work at Al Noori Muslim School"
+      }
+    ],
     "overview": "Allscope Concrete delivered concrete works at Al Noori Muslim School in Greenacre."
   }
 ];

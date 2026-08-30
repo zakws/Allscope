@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Projects",
   description:
-    "Seventeen concreting projects across Sydney and NSW: multi-residential precincts, an airport departures hall, self-storage, hospitality venues, a public school and service stations.",
+    "Nineteen concreting projects across Sydney and NSW: multi-residential precincts, an airport departures hall, self-storage, hospitality venues, schools and service stations.",
   path: "/projects",
 });
 
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
             The built record
           </h1>
           <p className="measure mt-4 text-lg leading-relaxed text-ink-2">
-            Seventeen projects across Sydney and NSW. Each entry lists the
+            Nineteen projects across Sydney and NSW. Each entry lists the
             location, sector and delivery team as recorded, with the photography
             behind it. Filter by sector, or by what&rsquo;s on site now.
             References for any of them are available on request.

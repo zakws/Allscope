@@ -182,3 +182,55 @@ registered twilight photograph ASC-OTP-004.
 | Al Noori 01/02 (2021 pour), 03/04 (campus) | STAGED | School approval + Allscope phase confirmation required; no student-activity imagery |
 
 New projects launched text-led (no substituted photography): Chalmers Hotel Mascot, Bunnings Rose Bay, Al Noori Muslim School.
+
+## Final photo pack, 29 Aug 2026 (handover: Allscope-FINAL-Website-Ready-Photo-Pack-2026-08-29)
+
+37 supplied images, all accounted for: 19 installed, 13 already live in the
+same or a higher-resolution master, 5 held (El Jannah Minto). Integration
+decisions live in `scripts/photo-pack-2026-08-29.mjs`; alt text and focal
+positions come verbatim from the pack's `00-ASSET-MANIFEST.json`.
+
+RIGHTS: the pack is technically prepared but grants no commercial reuse
+rights itself (its own register, `00-SOURCE-AND-PERMISSION-REGISTER.md`).
+Permission remains outstanding per source party below. Built and QA'd
+locally; NOT production-deployed until Ali confirms.
+
+### Installed (19)
+
+| Asset | Placement | Source / permission owed to |
+|---|---|---|
+| PK-OPH-01..05 | Oran Park Hotel lead + 4 gallery | Versatile Construction / Momento Hospitality / photographer (some public completion photos credited to Steven Woodburn) |
+| PK-OTW-01 | One The Waterfront lead (completed exterior) | Captain Formwork / ANCR / photographer |
+| PK-VRK-02, PK-VRK-04 | VIEW Rockdale gallery (wide dusk, courtyard) | James Hardie / Anjie / photographer |
+| PK-BPP-02 | BP Prestons gallery (aerial) | Benzina project party / property photography owner |
+| PK-BPO-01, PK-BPO-02 | BP Oberon lead + entrance | Google contributors (Burden Family Reviews, Apr 2022; Hiren Varsani, Jul 2020) or BP |
+| PK-BRB-01 | Bunnings Rose Bay lead | Bunnings Rose Bay business profile (Oct 2019 upload). NOTE: photo shows the Palloma building housing the store; no Bunnings signage visible in frame |
+| PK-ANS-01, PK-ANS-02 | Al Noori Muslim School lead + gallery | Al Noori Muslim School / photographer. Phase confirmation from Ali still required |
+| PK-CHM-01..04 | Chalmers Hotel lead + 3 gallery (live structural works) | Kuatro Build. Native 800px sources (01-03): fine on cards, slightly soft on the full-width page hero |
+| PK-CHM-05 | Chalmers gallery, LAST, "Artist's impression" label | Kuatro Build (design render; the site's single authored render exception) |
+
+### Already live (13 pack images not re-installed)
+
+Pack OTW 02/03/04 = ASC-OTW-005/006/007 (identical files, identical
+resolution). Pack VRK 01 = OJ4-VRK-02 (2000px master), VRK 03 = ASC-VRK-005.
+Pack BPP 01 = the current lead PROJECT-14 (same photograph), BPP 03/04 =
+OJ4-BPP-02/01 (2000px masters). Entire Asha folder: lead = ASC-ASH-004
+(same dusk photograph), 02..05 = ASC-ASH-006/OJ4-ASH-02/OJ4-ASH-01/
+ASC-ASH-007. Perceptual-hash matched and confirmed visually.
+
+### Retired by this integration (files removed)
+
+| Asset | Reason |
+|---|---|
+| oran-park-hotel-owner-render.webp | Interim render lead (26 Aug) superseded by real completed-hotel photography |
+| PROJECT-08-ONE-THE-WATERFRONT-01 | Overcast construction-stage lead superseded by the completed exterior |
+| PROJECT-16-BP-OBERON-01 | Person-dominant (posed portrait at the store entrance) |
+| OJ4-BPO-01 | Shop interior visible through open doors; superseded by the pack's clean branded entrance |
+| ASC-ASH-008 / ASC-ASH-010 | Pre-existing duplicates of OJ4-ASH-01 / OJ4-ASH-02 (2000px masters kept), surfaced by the pack's hash pass |
+
+### Held (5)
+
+`05-El-Jannah-Minto-HOLD-LOCATION-CONFIRMATION` (5 images): NOT copied into
+the repo, no El Jannah Minto entry created, El Jannah Prestons page left
+untouched. Ali must confirm Minto is an Allscope location before these are
+integrated (then Abacorp / photographer permission also applies).

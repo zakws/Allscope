@@ -21,22 +21,8 @@
   "quality": 84
  },
  {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\02_WEBSITE_READY_LEADS\\PROJECT-06-ORAN-PARK-HOTEL-01.jpg",
-  "out": "public/media/leads/PROJECT-06-ORAN-PARK-HOTEL-01.webp",
-  "kind": "lead",
-  "maxW": 2400,
-  "quality": 84
- },
- {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\02_WEBSITE_READY_LEADS\\PROJECT-07-ASHA-WESTMEAD-01.jpg",
   "out": "public/media/leads/PROJECT-07-ASHA-WESTMEAD-01.webp",
-  "kind": "lead",
-  "maxW": 2400,
-  "quality": 84
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\02_WEBSITE_READY_LEADS\\PROJECT-08-ONE-THE-WATERFRONT-01.jpg",
-  "out": "public/media/leads/PROJECT-08-ONE-THE-WATERFRONT-01.webp",
   "kind": "lead",
   "maxW": 2400,
   "quality": 84
@@ -72,13 +58,6 @@
  {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\02_WEBSITE_READY_LEADS\\PROJECT-15-EL-JANNAH-PRESTONS-01.jpg",
   "out": "public/media/leads/PROJECT-15-EL-JANNAH-PRESTONS-01.webp",
-  "kind": "lead",
-  "maxW": 2400,
-  "quality": 84
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\02_WEBSITE_READY_LEADS\\PROJECT-16-BP-OBERON-01.jpg",
-  "out": "public/media/leads/PROJECT-16-BP-OBERON-01.webp",
   "kind": "lead",
   "maxW": 2400,
   "quality": 84
@@ -338,20 +317,6 @@
  {
   "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\07-asha-westmead\\ASC-ASH-007-podium-lawn-and-landscaped-space.jpg",
   "out": "public/media/projects/asha-westmead/ASC-ASH-007.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\07-asha-westmead\\ASC-ASH-008-rooftop-terrace-and-finished-hardscape.jpg",
-  "out": "public/media/projects/asha-westmead/ASC-ASH-008.webp",
-  "kind": "gallery",
-  "maxW": 2000,
-  "quality": 82
- },
- {
-  "src": "C:\\Users\\zakar\\OneDrive\\Desktop\\Allscope website\\allscope-site\\NEW PHOTOs AND VIDEOS\\allscope-photo-library-2026-08-19\\01_PROJECT_PHOTOS\\07-asha-westmead\\ASC-ASH-010-fa-ade-stair-and-material-detail.jpg",
-  "out": "public/media/projects/asha-westmead/ASC-ASH-010.webp",
   "kind": "gallery",
   "maxW": 2000,
   "quality": 82
