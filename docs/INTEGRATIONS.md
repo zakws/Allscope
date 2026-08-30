@@ -1,26 +1,45 @@
 # Integration checklist
 
-The site is fully functional without credentials: forms validate server-side,
-store to `.submissions/` (outside `public/`, gitignored) and tell the user
-honestly that delivery is not yet connected. Connect the following before
-launch. All variables go in `.env.local` / the hosting environment — see
-`.env.example`. Never commit secrets.
+Without credentials the forms validate server-side, capture to
+`.submissions/` in dev (outside `public/`, gitignored — Vercel's function
+filesystem is read-only, so this never persists in production) and tell the
+user honestly that delivery is not yet connected. All variables go in
+`.env.local` / the hosting environment. Never commit secrets.
 
-## 1. Email delivery (required for launch)
+## 1. Email delivery (BUILT — needs two env vars to switch on)
 
-Recommended: Resend (or SMTP). Wire-up point: `src/lib/submissions.ts` →
-`storeSubmission()` currently ends with local persistence; add a send step that
-notifies `TENDER_INBOX` with the reference, form data summary and secure links
-(never raw attachments if files are large). Confirm the real tender inbox with
-the owner first (`site.ts` → `email`).
+Implemented 30 Aug 2026 in `src/lib/email.ts` (Resend HTTP API, no SDK):
+every validated tender / contact / careers submission is emailed with its
+attachments, reply-to set to the submitter. The success screen says "SENT TO
+ALLSCOPE" only when the provider accepted the email; a failed send returns an
+honest error to the user, never a fake success.
 
-## 2. Object storage for tender documents (required for launch)
+To activate:
 
-Recommended: Cloudflare R2 or S3, private bucket.
+1. Create a free account at resend.com **using the inbox that should receive
+   submissions** (until a sending domain is verified, Resend's onboarding
+   sender only delivers to the account owner's own address).
+2. Resend dashboard → API Keys → Create API key.
+3. Vercel → Project → Settings → Environment Variables (Production):
+   - `RESEND_API_KEY` = the key
+   - `SUBMISSIONS_TO_EMAIL` = the receiving inbox (same address as step 1)
+4. Redeploy. Submit a test tender and confirm it lands.
 
-- Signed upload URLs for large files (raises the current 25 MB/file local cap;
-  UI copy in `FileUploader.tsx` and `submissions.ts` limits should be updated
-  to match the storage-backed limits, e.g. 100 MB/file)
+When the company domain is on Resend (Domains → verify
+allscopeconcrete.com.au DNS records), also set
+`SUBMISSIONS_FROM_EMAIL="Allscope Website <tenders@allscopeconcrete.com.au>"`
+— then `SUBMISSIONS_TO_EMAIL` can be any address (e.g. Ali's), not just the
+account owner's.
+
+## 2. Object storage for large tender documents (upgrade path)
+
+Submissions travel as one request through a Vercel function (hard 4.5 MB
+body cap), so uploads are limited to 4 MB combined and the form points
+larger sets at file-share links. To accept full drawing sets directly:
+Vercel Blob (or R2/S3) client uploads — browser-to-bucket via signed URLs,
+email then carries download links instead of attachments.
+
+- Raise the limits in `submissions.ts` + `FileUploader.tsx` together
 - 12-month lifecycle deletion rule (retention promise in the privacy policy)
 - Malware scanning/quarantine where the platform supports it
 - Objects keyed by submission reference; never publicly addressable

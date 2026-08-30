@@ -2,20 +2,24 @@ import "server-only";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { headers } from "next/headers";
+import { emailConfigured, sendSubmissionEmail, type SubmissionKind } from "./email";
 
 /**
- * Local submission capture.
+ * Submission delivery.
  *
- * Until email/storage credentials are connected (see docs/INTEGRATIONS.md),
- * validated submissions are written to `.submissions/` at the project root —
- * OUTSIDE `public/`, never web-addressable, and gitignored. The UI reports
- * this state honestly; it never pretends an email was sent.
+ * With RESEND_API_KEY + SUBMISSIONS_TO_EMAIL configured (docs/INTEGRATIONS.md)
+ * every validated submission is emailed with its attachments; `delivered`
+ * reports that truthfully to the UI. Local capture to `.submissions/`
+ * (outside public/, gitignored) is a dev convenience only — Vercel's
+ * function filesystem is read-only, so it is best-effort and never the
+ * reason a configured submission fails.
  */
 
 export interface StoredResult {
   ok: true;
   reference: string;
-  integrationConnected: false;
+  /** True only when the notification email was accepted by the provider. */
+  delivered: boolean;
   storedAt: string;
 }
 
@@ -83,8 +87,12 @@ export const ALLOWED_EXTENSIONS = [
   ".zip",
 ] as const;
 
-export const MAX_FILE_BYTES = 25 * 1024 * 1024; // 25 MB local capture limit
-export const MAX_TOTAL_BYTES = 100 * 1024 * 1024; // 100 MB per submission
+// Vercel serverless requests are hard-capped at 4.5 MB, so anything larger
+// never reaches the action in production. Limits are set inside that cap
+// (fields + multipart overhead need headroom) and the forms point larger
+// packages at file-share links instead.
+export const MAX_FILE_BYTES = 4 * 1024 * 1024; // 4 MB per file
+export const MAX_TOTAL_BYTES = 4 * 1024 * 1024; // 4 MB per submission
 export const MAX_FILES = 10;
 
 export interface FileCheckError {
@@ -104,7 +112,7 @@ export function checkFiles(files: File[]): FileCheckError[] {
       errors.push({ name: f.name, reason: `File type ${ext || "(none)"} is not accepted.` });
     }
     if (f.size > MAX_FILE_BYTES) {
-      errors.push({ name: f.name, reason: "Over the 25 MB per-file limit." });
+      errors.push({ name: f.name, reason: "Over the 4 MB per-file limit. Send a file-share link in the summary instead." });
     }
     if (f.size === 0) {
       errors.push({ name: f.name, reason: "File is empty." });
@@ -112,7 +120,7 @@ export function checkFiles(files: File[]): FileCheckError[] {
     total += f.size;
   }
   if (total > MAX_TOTAL_BYTES) {
-    errors.push({ name: "(all)", reason: "Combined files exceed the 100 MB submission limit." });
+    errors.push({ name: "(all)", reason: "Combined files exceed the 4 MB submission limit. Send a file-share link in the summary instead." });
   }
   return errors;
 }
@@ -121,39 +129,64 @@ function safeFilename(name: string): string {
   return name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 120);
 }
 
-/* ---------- Local persistence ---------- */
+/* ---------- Delivery ---------- */
 
-export async function storeSubmission(
-  kind: "tender" | "contact" | "careers",
+/** Dev capture to `.submissions/`; best-effort (read-only FS on Vercel). */
+async function captureLocally(
+  kind: SubmissionKind,
+  reference: string,
+  data: Record<string, unknown>,
+  files: File[],
+): Promise<boolean> {
+  try {
+    const dir = path.join(SUBMISSIONS_DIR, kind, reference);
+    await mkdir(dir, { recursive: true });
+    const record = {
+      reference,
+      kind,
+      receivedAt: new Date().toISOString(),
+      data,
+      files: files.map((f) => ({ name: safeFilename(f.name), size: f.size, type: f.type })),
+    };
+    await writeFile(path.join(dir, "submission.json"), JSON.stringify(record, null, 2), "utf8");
+    for (const f of files) {
+      const buf = Buffer.from(await f.arrayBuffer());
+      await writeFile(path.join(dir, safeFilename(f.name)), buf);
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Email first (when configured), local capture second. A configured send
+ * that fails throws so the caller reports an honest error — success is
+ * never claimed for a submission nobody will receive.
+ */
+export async function deliverSubmission(
+  kind: SubmissionKind,
   reference: string,
   data: Record<string, unknown>,
   files: File[] = [],
 ): Promise<StoredResult> {
-  const dir = path.join(SUBMISSIONS_DIR, kind, reference);
-  await mkdir(dir, { recursive: true });
-
-  const record = {
-    reference,
-    kind,
-    receivedAt: new Date().toISOString(),
-    integrationConnected: false,
-    data,
-    files: files.map((f) => ({ name: safeFilename(f.name), size: f.size, type: f.type })),
-  };
-  await writeFile(path.join(dir, "submission.json"), JSON.stringify(record, null, 2), "utf8");
-
-  for (const f of files) {
-    const buf = Buffer.from(await f.arrayBuffer());
-    await writeFile(path.join(dir, safeFilename(f.name)), buf);
+  let delivered = false;
+  if (emailConfigured()) {
+    await sendSubmissionEmail(kind, reference, data, files);
+    delivered = true;
   }
-
+  const stored = await captureLocally(kind, reference, data, files);
+  if (!delivered && !stored) {
+    throw new Error("no delivery path: email not configured and local capture unavailable");
+  }
   // Log status only — never drawing contents.
-  console.info(`[submission] ${kind} ${reference} stored locally (${files.length} file(s)). Integration not connected.`);
-
+  console.info(
+    `[submission] ${kind} ${reference}: ${delivered ? "emailed" : "NOT emailed (delivery unconfigured)"}${stored ? ", captured locally" : ""} (${files.length} file(s))`,
+  );
   return {
     ok: true,
     reference,
-    integrationConnected: false,
-    storedAt: record.receivedAt,
+    delivered,
+    storedAt: new Date().toISOString(),
   };
 }

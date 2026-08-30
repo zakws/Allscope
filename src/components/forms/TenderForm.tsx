@@ -181,8 +181,9 @@ export function TenderForm() {
           <span className="display text-2xl text-ink">Documents</span>
         </legend>
         <p className="measure text-[0.9rem] text-ink-2">
-          Drawings, scope documents, programme, BOQ or schedules. Larger sets or CAD
-          files (DWG/DXF): send a file-share link in the scope summary instead.
+          Drawings, scope documents, programme, BOQ or schedules, up to 4 MB
+          combined. Larger sets or CAD files (DWG/DXF): send a file-share link
+          in the scope summary instead.
         </p>
         <FileUploader name="documents" label="Tender documents" analyticsEvent="tender_file_upload" />
       </fieldset>

@@ -4,9 +4,12 @@ import { useCallback, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
 
 const ALLOWED = [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".jpg", ".jpeg", ".png", ".zip"];
-const MAX_FILE_MB = 25;
+// Mirrors src/lib/submissions.ts: submissions travel as one request through
+// a serverless function capped at 4.5 MB, and attachments ride the
+// notification email. Larger sets go by file-share link instead.
+const MAX_FILE_MB = 4;
 const MAX_FILES = 10;
-const MAX_TOTAL_MB = 100;
+const MAX_TOTAL_MB = 4;
 
 function fmtSize(bytes: number): string {
   if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
@@ -131,7 +134,7 @@ export function FileUploader({
           </button>
         </p>
         <p className="tech-label text-ink-3">
-          PDF · DOC · XLS · JPG · PNG · ZIP · max {MAX_FILE_MB} MB each, {maxFiles} files
+          PDF · DOC · XLS · JPG · PNG · ZIP · {MAX_TOTAL_MB} MB combined, up to {maxFiles} files
         </p>
         <input
           ref={inputRef}

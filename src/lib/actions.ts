@@ -3,17 +3,18 @@
 import { z } from "zod";
 import {
   checkFiles,
+  deliverSubmission,
   looksLikeSpam,
   makeReference,
   rateLimited,
-  storeSubmission,
   type SubmissionResult,
 } from "./submissions";
 
 /**
  * Server actions for the three forms. All validation is server-side and
- * mirrored client-side for UX. On success, submissions are stored locally
- * and the UI reports honestly that delivery integration is not yet connected.
+ * mirrored client-side for UX. On success, submissions are emailed through
+ * (attachments included) when delivery is configured; the UI reports the
+ * delivered/undelivered state honestly either way.
  */
 
 function fieldErrorsFrom(error: z.ZodError): Record<string, string> {
@@ -95,10 +96,10 @@ export async function submitTender(
 
   try {
     const reference = makeReference("TEN");
-    return await storeSubmission("tender", reference, parsed.data, files);
+    return await deliverSubmission("tender", reference, parsed.data, files);
   } catch (err) {
-    console.error("[submission] tender store failed:", (err as Error).message);
-    return { ok: false, formError: "The submission could not be stored. Please try again or call Allscope directly." };
+    console.error("[submission] tender delivery failed:", (err as Error).message);
+    return { ok: false, formError: "The package could not be sent. Please try again in a few minutes, or call Allscope directly." };
   }
 }
 
@@ -135,10 +136,10 @@ export async function submitContact(
   }
   try {
     const reference = makeReference("CON");
-    return await storeSubmission("contact", reference, parsed.data);
+    return await deliverSubmission("contact", reference, parsed.data);
   } catch (err) {
-    console.error("[submission] contact store failed:", (err as Error).message);
-    return { ok: false, formError: "The message could not be stored. Please try again or call Allscope directly." };
+    console.error("[submission] contact delivery failed:", (err as Error).message);
+    return { ok: false, formError: "The message could not be sent. Please try again in a few minutes, or call Allscope directly." };
   }
 }
 
@@ -185,9 +186,9 @@ export async function submitCareers(
   }
   try {
     const reference = makeReference("EOI");
-    return await storeSubmission("careers", reference, parsed.data, files);
+    return await deliverSubmission("careers", reference, parsed.data, files);
   } catch (err) {
-    console.error("[submission] careers store failed:", (err as Error).message);
-    return { ok: false, formError: "The application could not be stored. Please try again or call Allscope directly." };
+    console.error("[submission] careers delivery failed:", (err as Error).message);
+    return { ok: false, formError: "The application could not be sent. Please try again in a few minutes, or call Allscope directly." };
   }
 }

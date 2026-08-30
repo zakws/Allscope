@@ -6,8 +6,9 @@ import { site } from "@/content/site";
 
 /**
  * Honest submission feedback.
- * Success = "validated and stored" with an explicit integration-pending note;
- * it never claims an email was sent while delivery is unconnected.
+ * `delivered` is true only when the notification email was accepted by the
+ * provider; environments without delivery configured show an explicit
+ * integration-pending note instead — success never overstates what happened.
  */
 export function FormResult({
   state,
@@ -25,7 +26,9 @@ export function FormResult({
       role="status"
       aria-live="polite"
     >
-      <p className="tech-label text-success">SUBMISSION VALIDATED</p>
+      <p className="tech-label text-success">
+        {state.delivered ? "SENT TO ALLSCOPE" : "SUBMISSION VALIDATED"}
+      </p>
       <h2 className="display mt-2 text-2xl text-ink">{successHeading}</h2>
       <dl className="mt-4 space-y-2 text-[0.9rem] text-ink-2">
         <div>
@@ -38,7 +41,7 @@ export function FormResult({
         </div>
       </dl>
       <p className="mt-4 text-[0.9rem] leading-relaxed text-ink-2">{whatHappensNext}</p>
-      {!state.integrationConnected && (
+      {!state.delivered && (
         <p className="mt-4 border border-warning/40 bg-warning/10 p-3 text-[0.82rem] leading-relaxed text-warning">
           Preview environment: this submission was validated and stored securely on the
           server, but email delivery is not yet connected. For anything urgent, call{" "}

@@ -27,10 +27,12 @@ const legacyRedirects = [
 const nextConfig: NextConfig = {
   experimental: {
     serverActions: {
-      // Tender uploads: 10 files ≤ 25 MB each, 100 MB per submission,
-      // plus multipart overhead. Production should move large files to
-      // signed direct-to-storage uploads (see docs/INTEGRATIONS.md).
-      bodySizeLimit: "120mb",
+      // Submissions travel as one request; Vercel functions reject bodies
+      // over 4.5 MB, so the forms cap uploads at 4 MB combined and this
+      // limit mirrors production locally (fields + multipart overhead).
+      // Bigger tender sets should move to signed direct-to-storage uploads
+      // (see docs/INTEGRATIONS.md).
+      bodySizeLimit: "5mb",
     },
   },
   async redirects() {
