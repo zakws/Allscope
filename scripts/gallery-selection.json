@@ -1,6 +1,7 @@
 [
  {
   "file": "IMG_1068_ALLSCOPE_4K.jpg",
+  "replacement": "IMG_1068_ENHANCED.webp",
   "alt": "Golden-hour view across a large slab deck laid with reinforcement mesh and column starter cages, with a concrete pump boom arcing over blockwork walls ready for the pour.",
   "caption": "Reinforcement and formwork",
   "role": "featured"
@@ -25,12 +26,14 @@
  },
  {
   "file": "PHOTO-2026-07-29-20-58-23_ALLSCOPE_4K.jpg",
+  "replacement": "PHOTO-2026-07-29-20-58-23_ENHANCED.webp",
   "alt": "Twilight view of a completed school courtyard with tiered concrete amphitheatre seating and checkerboard paving.",
   "caption": "Structural concrete works",
   "role": "row"
  },
  {
   "file": "IMG_1040_ALLSCOPE_4K.jpg",
+  "replacement": "IMG_1040_ENHANCED.webp",
   "alt": "Aerial view of a large basement raft pour with two concrete pump booms, queued agitator trucks and crews spreading wet concrete across the reinforced deck.",
   "caption": "Commercial concrete construction",
   "role": "row"
@@ -91,6 +94,7 @@
  },
  {
   "file": "PHOTO-2026-07-29-20-56-53_ALLSCOPE_4K.jpg",
+  "replacement": "PHOTO-2026-07-29-20-56-53_ENHANCED.webp",
   "alt": "Large basement raft slab pour in progress with the finishing crew screeding and power trowelling fresh concrete between shotcrete walls, pump line entering from above.",
   "caption": "Commercial concrete construction",
   "role": "row"
@@ -841,6 +845,7 @@
  },
  {
   "file": "PHOTO-2026-07-29-20-58-15_ALLSCOPE_4K.jpg",
+  "replacement": "PHOTO-2026-07-29-20-58-15_ENHANCED.webp",
   "alt": "Two concreters finishing a fresh section of a basement raft pour beside an excavator in a shored dig.",
   "caption": "Concrete placement and finishing",
   "role": "row"
@@ -879,12 +884,6 @@
   "file": "PHOTO-2026-07-29-18-23-09(30)_ALLSCOPE_4K.jpg",
   "alt": "Freshly cast kerb curving past a formed-up footpath with mesh on bar chairs while a worker hoses the works at dusk.",
   "caption": "Reinforcement and formwork",
-  "role": "row"
- },
- {
-  "file": "IMG_1059_ALLSCOPE_4K.jpg",
-  "alt": "Elevated view of a sandy basement excavation with an excavator, formwork and two workers finishing a small fresh concrete section.",
-  "caption": "Commercial concrete construction",
   "role": "row"
  },
  {
@@ -1147,7 +1146,8 @@
  },
  {
   "file": "PHOTO-2026-07-29-20-58-14(1)_ALLSCOPE_4K.jpg",
-  "alt": "Concrete tiered seating and stairs in a courtyard washed out by low sun glare.",
+  "replacement": "PHOTO-2026-07-29-20-58-14(1)_ENHANCED.webp",
+  "alt": "Concrete tiered seating and stairs in a courtyard at low golden sun.",
   "caption": "Structural concrete works",
   "role": "row"
  },

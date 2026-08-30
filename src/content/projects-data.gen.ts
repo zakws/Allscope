@@ -1324,10 +1324,10 @@ export const projectRecords: ProjectRecord[] = [
     },
     "gallery": [
       {
-        "assetId": "OJ4-OPS-02",
-        "src": "/media/projects/oran-park-public-school/OJ4-OPS-02.webp",
-        "width": 2000,
-        "height": 1286,
+        "assetId": "UP-OPS-02",
+        "src": "/media/projects/oran-park-public-school/UP-OPS-02.webp",
+        "width": 1564,
+        "height": 1006,
         "orientation": "landscape",
         "tier": "B",
         "render": false,

@@ -18,7 +18,15 @@ const sharp = require("sharp");
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
 const SRC = path.resolve(SITE, "..", "ALLSCOPE_ENHANCED_4K_V2", "ALLSCOPE_ENHANCED_4K");
+const REPL = path.resolve(SITE, "..", "ALLSCOPE-ENHANCED-REPLACEMENTS-2026-08-30");
 const OUT = path.join(SITE, "public", "media", "features");
+
+/** Enhanced replacements (30 Aug 2026): slots whose pixel source comes from
+ *  the replacements folder instead of the V2 master. Output name and slot
+ *  wiring are unchanged. */
+const REPLACEMENTS = {
+  "cap-band": "IMG_1040_ENHANCED.webp",
+};
 
 const P = "PHOTO-2026-07-29-";
 const SLOTS = [
@@ -57,13 +65,13 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const records = {};
 for (const [slot, file, alt] of SLOTS) {
-  const p = path.join(SRC, file);
-  if (!fs.existsSync(p)) throw new Error("missing master: " + file);
+  const p = REPLACEMENTS[slot] ? path.join(REPL, REPLACEMENTS[slot]) : path.join(SRC, file);
+  if (!fs.existsSync(p)) throw new Error("missing master: " + (REPLACEMENTS[slot] ?? file));
   const img = sharp(p).rotate();
   const meta = await img.metadata();
   const landscape = (meta.width ?? 1) >= (meta.height ?? 1);
   await img
-    .resize(landscape ? { width: 2400 } : { height: 2400 })
+    .resize(landscape ? { width: 2400, withoutEnlargement: true } : { height: 2400, withoutEnlargement: true })
     .webp({ quality: 84, effort: 5 })
     .toFile(path.join(OUT, `${slot}.webp`));
   const m = await sharp(path.join(OUT, `${slot}.webp`)).metadata();

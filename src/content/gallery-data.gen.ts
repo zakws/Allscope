@@ -61,7 +61,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-23.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-58-23.webp",
     "width": 1000,
-    "height": 642,
+    "height": 643,
     "orientation": "landscape",
     "alt": "Twilight view of a completed school courtyard with tiered concrete amphitheatre seating and checkerboard paving.",
     "caption": "Structural concrete works",
@@ -1420,7 +1420,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-15.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-58-15.webp",
-    "width": 561,
+    "width": 605,
     "height": 1000,
     "orientation": "portrait",
     "alt": "Two concreters finishing a fresh section of a basement raft pour beside an excavator in a shored dig.",
@@ -1485,16 +1485,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     "orientation": "portrait",
     "alt": "Freshly cast kerb curving past a formed-up footpath with mesh on bar chairs while a worker hoses the works at dusk.",
     "caption": "Reinforcement and formwork",
-    "role": "row"
-  },
-  {
-    "thumb": "/media/gallery/thumb/img-1059.webp",
-    "full": "/media/gallery/full/img-1059.webp",
-    "width": 787,
-    "height": 1000,
-    "orientation": "portrait",
-    "alt": "Elevated view of a sandy basement excavation with an excavator, formwork and two workers finishing a small fresh concrete section.",
-    "caption": "Commercial concrete construction",
     "role": "row"
   },
   {
@@ -1931,9 +1921,9 @@ export const galleryPhotos: GalleryPhoto[] = [
     "thumb": "/media/gallery/thumb/photo-2026-07-29-20-58-14-1-.webp",
     "full": "/media/gallery/full/photo-2026-07-29-20-58-14-1-.webp",
     "width": 1000,
-    "height": 752,
+    "height": 667,
     "orientation": "landscape",
-    "alt": "Concrete tiered seating and stairs in a courtyard washed out by low sun glare.",
+    "alt": "Concrete tiered seating and stairs in a courtyard at low golden sun.",
     "caption": "Structural concrete works",
     "role": "row"
   },

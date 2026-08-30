@@ -234,3 +234,24 @@ ASC-ASH-007. Perceptual-hash matched and confirmed visually.
 the repo, no El Jannah Minto entry created, El Jannah Prestons page left
 untouched. Ali must confirm Minto is an Allscope location before these are
 integrated (then Abacorp / photographer permission also applies).
+
+## Enhanced replacements, 30 Aug 2026
+
+Zak supplied enhanced versions of six of Allscope's own photographs whose
+served copies were visibly soft (masters: ALLSCOPE-ENHANCED-REPLACEMENTS-2026-08-30,
+beside the other photo folders). Every site instance was located by
+perceptual hash and replaced at native resolution, never upscaled:
+
+| Photo | Instances replaced |
+|---|---|
+| Golden-hour deck with pump boom (IMG_1068) | Gallery featured opener |
+| Aerial basement raft pour (IMG_1040) | Gallery + capabilities band (cap-band slot) |
+| School twilight amphitheatre (PHOTO ...20-58-23) | Gallery + Oran Park Public School page (OJ4-OPS-02 -> UP-OPS-02) |
+| Basement raft pour between shotcrete walls (...20-56-53) | Gallery |
+| Footing pour beside excavator (...20-58-15) | Gallery; the blurry near-duplicate IMG_1059 entry was removed (gallery now 209) |
+| Tiered seating at low sun (...20-58-14(1)) | Gallery |
+
+Also fixed at the root: full-width gallery tiles (featured and solo
+landscape rows) previously rendered the 1000px thumb at up to 100vw, which
+made even sharp masters look soft on large or high-DPI screens; they now
+serve the full master through the image optimizer (GalleryGrid `hires`).

@@ -104,7 +104,7 @@ function RowSet({
                 ))}
               </div>
             ) : row.items[0].orientation === "landscape" ? (
-              <Tile photo={row.items[0]} index={row.start} open={open} />
+              <Tile photo={row.items[0]} index={row.start} open={open} hires />
             ) : (
               <div className="mx-auto w-full max-w-md md:max-w-lg">
                 <Tile photo={row.items[0]} index={row.start} open={open} />
@@ -122,12 +122,16 @@ function Tile({
   open,
   eager = false,
   large = false,
+  hires = false,
 }: {
   photo: GalleryPhoto;
   index: number;
   open: (i: number) => void;
   eager?: boolean;
   large?: boolean;
+  /** Full-width tiles render past the 1000px thumb; serve the full master
+   *  so the optimizer can deliver sharp variants at 80-100vw. */
+  hires?: boolean;
 }) {
   return (
     <button
@@ -141,7 +145,7 @@ function Tile({
         style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
       >
         <Image
-          src={photo.thumb}
+          src={large || hires ? photo.full : photo.thumb}
           alt={photo.alt}
           fill
           sizes={

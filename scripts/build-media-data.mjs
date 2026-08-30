@@ -49,6 +49,7 @@ import {
 } from "./new-media-sources.mjs";
 import { newProjects, oranParkCorrection } from "./project-updates-2026-08-26.mjs";
 import { photoPack, supersededGalleryAssets } from "./photo-pack-2026-08-29.mjs";
+import { photoUpgrades } from "./photo-upgrades-2026-08-30.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
@@ -565,6 +566,32 @@ for (const pk of photoPack) {
 // no pack entry of its own, so this cannot live inside the loop above).
 for (const p of projects) {
   p.gallery = p.gallery.filter((g) => !supersededGalleryAssets.has(g.assetId));
+}
+
+// ---- Enhanced photo upgrades, 30 Aug 2026 (see photo-upgrades module):
+// same photograph, cleaner pixels — the row keeps its caption, tier and
+// position; only asset id, src and dimensions change. ----
+const UP_DIMS_PATH = path.join(HERE, "photo-upgrade-dims.json");
+const upDims = fs.existsSync(UP_DIMS_PATH)
+  ? JSON.parse(fs.readFileSync(UP_DIMS_PATH, "utf8"))
+  : null;
+for (const u of photoUpgrades) {
+  const p = projects.find((x) => x.slug === u.slug);
+  if (!p) throw new Error(`photo-upgrade targets an unknown slug: ${u.slug}`);
+  const row = p.gallery.find((g) => g.assetId === u.replaceAssetId);
+  if (!row) throw new Error(`photo-upgrade row not found: ${u.replaceAssetId} on ${u.slug}`);
+  const d = upDims?.[u.newAssetId];
+  if (!d) {
+    throw new Error(
+      `no installed dimensions for ${u.newAssetId} — run: node scripts/install-photo-upgrades-2026-08-30.mjs`,
+    );
+  }
+  row.assetId = u.newAssetId;
+  row.src = `/media/projects/${u.slug}/${u.newAssetId}.webp`;
+  row.width = d.width;
+  row.height = d.height;
+  row.orientation =
+    d.width > d.height ? "landscape" : d.width === d.height ? "square" : "portrait";
 }
 
 projects.sort((a, b) => a.order - b.order);

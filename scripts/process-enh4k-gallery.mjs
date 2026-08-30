@@ -2,9 +2,14 @@
  * Gallery pipeline for the ALLSCOPE_ENHANCED_4K collection.
  *
  * Reads scripts/gallery-selection.json — the curated, ORDERED selection:
- *   [{ file, alt, caption?, role: "featured" | "support" | "row" }]
+ *   [{ file, alt, caption?, role: "featured" | "support" | "row",
+ *      replacement? }]
  * (order in the array IS the display order; first entry is the featured
  * opener, the next 2-3 "support" sit directly under it).
+ *
+ * `replacement` names a file in ALLSCOPE-ENHANCED-REPLACEMENTS-2026-08-30
+ * (enhanced versions of soft masters, supplied 30 Aug 2026): it is used as
+ * the pixel source while the output name and URLs stay keyed to `file`.
  *
  * Emits per photo:
  *   public/media/gallery/thumb/<name>.webp  (grid, 1000px long edge, q80)
@@ -24,6 +29,7 @@ const sharp = require("sharp");
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
 const SRC = path.resolve(SITE, "..", "ALLSCOPE_ENHANCED_4K_V2", "ALLSCOPE_ENHANCED_4K");
+const REPL = path.resolve(SITE, "..", "ALLSCOPE-ENHANCED-REPLACEMENTS-2026-08-30");
 const OUT_T = path.join(SITE, "public", "media", "gallery", "thumb");
 const OUT_F = path.join(SITE, "public", "media", "gallery", "full");
 
@@ -38,8 +44,8 @@ fs.mkdirSync(OUT_F, { recursive: true });
 
 const records = [];
 for (const item of selection) {
-  const srcPath = path.join(SRC, item.file);
-  if (!fs.existsSync(srcPath)) throw new Error(`missing source: ${item.file}`);
+  const srcPath = item.replacement ? path.join(REPL, item.replacement) : path.join(SRC, item.file);
+  if (!fs.existsSync(srcPath)) throw new Error(`missing source: ${item.replacement ?? item.file}`);
   const name = item.file
     .replace(/_ALLSCOPE_4K\.jpg$/i, "")
     .toLowerCase()

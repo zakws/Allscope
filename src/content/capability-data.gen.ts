@@ -56,8 +56,8 @@ export const featurePhotos = {
   },
   "cap-band": {
     "src": "/media/features/cap-band.webp",
-    "width": 2400,
-    "height": 1800,
+    "width": 1448,
+    "height": 1086,
     "alt": "Aerial view of a large basement raft pour with two concrete pump booms, queued agitator trucks and crews spreading concrete"
   },
   "about-pour": {
