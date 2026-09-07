@@ -48,7 +48,7 @@ import {
   folder04Decisions,
 } from "./new-media-sources.mjs";
 import { newProjects, oranParkCorrection } from "./project-updates-2026-08-26.mjs";
-import { photoPack, supersededGalleryAssets } from "./photo-pack-2026-08-29.mjs";
+import { elJannahMinto, photoPack, supersededGalleryAssets } from "./photo-pack-2026-08-29.mjs";
 import { photoUpgrades } from "./photo-upgrades-2026-08-30.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -524,6 +524,13 @@ function packDimsOf(assetId) {
   }
   return d;
 }
+// El Jannah Minto joined 30 Aug 2026 after Ali confirmed the location
+// (separate restaurant from the existing El Jannah Prestons page).
+if (projects.some((p) => p.slug === elJannahMinto.slug)) {
+  throw new Error("duplicate slug " + elJannahMinto.slug);
+}
+projects.push({ ...elJannahMinto });
+
 /** Slugs whose register-era lead is replaced by a pack lead (their old lead
  *  files retire; clean-orphan-media.mjs removes them after regeneration). */
 const PACK_LEAD_SLUGS = new Set();

@@ -5,16 +5,17 @@
  * roles, alt text and focal positions; alt text below is copied verbatim).
  *
  * The pack supplied 37 images across 10 projects. Integration accounting:
- *   - 19 files installed (this module)
+ *   - 24 files installed (this module): 19 on 29 Aug, plus the 5 El Jannah
+ *     Minto images on 30 Aug 2026 after Ali confirmed Minto is an Allscope
+ *     job (the hold in pack folder 05 is lifted; the project record is the
+ *     `elJannahMinto` export below). El Jannah Prestons is a separate
+ *     location and its page is untouched.
  *   - 13 files already live on the site in the same or a higher-resolution
  *     master (perceptual-hash match, confirmed visually): One The Waterfront
  *     construction trio = ASC-OTW-005/006/007, VIEW Rockdale hero =
  *     OJ4-VRK-02 and construction shot = ASC-VRK-005, BP Prestons hero =
  *     the current lead and both forecourt shots = OJ4-BPP-01/02, and the
  *     entire Asha folder (lead ASC-ASH-004 + ASC-ASH-005..007 + OJ4-ASH-01/02)
- *   - 5 files HELD: El Jannah Minto is not published or copied anywhere
- *     until Ali confirms Minto is an Allscope location (pack folder 05).
- *     The existing El Jannah Prestons page is left untouched.
  *
  * RIGHTS: the pack is technically prepared but does not itself grant
  * commercial reuse rights (00-SOURCE-AND-PERMISSION-REGISTER.md). Permission
@@ -136,6 +137,39 @@ export const photoPack = [
     ],
   },
   {
+    // Hold lifted 30 Aug 2026: Ali confirmed El Jannah Minto is an Allscope
+    // job. New record below (elJannahMinto); folder 05's full five images.
+    slug: "el-jannah-minto",
+    lead: {
+      assetId: "PK-EJM-01",
+      file: "05-El-Jannah-Minto-HOLD-LOCATION-CONFIRMATION/01-hero-completed-exterior.webp",
+      alt: "Completed El Jannah Minto restaurant exterior",
+      objectPosition: "50% 50%",
+    },
+    gallery: [
+      {
+        assetId: "PK-EJM-02",
+        file: "05-El-Jannah-Minto-HOLD-LOCATION-CONFIRMATION/02-gallery-construction-aerial.webp",
+        alt: "Aerial construction view of the El Jannah Minto building",
+      },
+      {
+        assetId: "PK-EJM-03",
+        file: "05-El-Jannah-Minto-HOLD-LOCATION-CONFIRMATION/03-gallery-concrete-drive-through.webp",
+        alt: "Concrete drive-through pavement at El Jannah Minto",
+      },
+      {
+        assetId: "PK-EJM-04",
+        file: "05-El-Jannah-Minto-HOLD-LOCATION-CONFIRMATION/04-gallery-front-elevation.webp",
+        alt: "Front elevation of the completed El Jannah Minto restaurant",
+      },
+      {
+        assetId: "PK-EJM-05",
+        file: "05-El-Jannah-Minto-HOLD-LOCATION-CONFIRMATION/05-gallery-side-elevation-and-pavement.webp",
+        alt: "Side elevation and concrete pavement at El Jannah Minto",
+      },
+    ],
+  },
+  {
     slug: "bunnings-rose-bay",
     lead: {
       assetId: "PK-BRB-01",
@@ -198,6 +232,31 @@ export const photoPack = [
     ],
   },
 ];
+
+/**
+ * New project record, added 30 Aug 2026 when Ali confirmed El Jannah Minto
+ * is an Allscope job (lifting the pack's location hold). Facts stay minimal
+ * like the other client-confirmed jobs: no builder, year, value or package
+ * is invented — Abacorp presents the project on its own site, but Allscope's
+ * contracting party is not confirmed. Lead and gallery come from the
+ * photoPack entry above.
+ */
+export const elJannahMinto = {
+  slug: "el-jannah-minto",
+  order: 19,
+  code: "EJM",
+  name: "El Jannah Minto",
+  location: "Minto",
+  sector: "hospitality",
+  team: "Delivery team not recorded",
+  legacyPage: null,
+  status: "completed",
+  statusNote: null,
+  lead: null,
+  gallery: [],
+  overview:
+    "Allscope Concrete delivered concrete works for the El Jannah restaurant at Minto.",
+};
 
 /**
  * Existing gallery rows retired by this integration (files removed by

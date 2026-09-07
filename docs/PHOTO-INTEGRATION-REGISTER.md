@@ -255,3 +255,16 @@ Also fixed at the root: full-width gallery tiles (featured and solo
 landscape rows) previously rendered the 1000px thumb at up to 100vw, which
 made even sharp masters look soft on large or high-DPI screens; they now
 serve the full master through the image optimizer (GalleryGrid `hires`).
+
+## El Jannah Minto hold lifted, 30 Aug 2026
+
+Ali confirmed (via Zak) that El Jannah Minto is an Allscope job. The five
+held images from pack folder 05 are installed as PK-EJM-01..05 on the new
+/projects/el-jannah-minto page (lead: completed dusk exterior; gallery:
+construction aerial, drive-through pavement, front elevation, side
+elevation). Facts kept minimal: no builder, year, value or package claimed
+(Abacorp presents the project on its own site but Allscope's contracting
+party is unconfirmed; delivery team recorded as not recorded). El Jannah
+Prestons remains its own separate page. Reuse permission per the pack
+register (Abacorp or the original photographer) remains formally outstanding,
+consistent with the rest of the pack; Zak made the go-live call.

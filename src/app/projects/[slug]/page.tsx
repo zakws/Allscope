@@ -25,7 +25,7 @@ function recordedTeam(p: ProjectRecord): string | null {
  * Overview written strictly from the record: name, status and the standing
  * trade-boundary fact. Sector, location and delivery team already sit in the
  * facts row above, so the prose never restates them. Sentence shapes rotate
- * on the register order so the nineteen pages read differently. No
+ * on the register order so the twenty pages read differently. No
  * per-project scope, quantities or dates are invented here.
  */
 const OPENERS: ((name: string) => string)[] = [

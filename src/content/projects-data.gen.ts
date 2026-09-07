@@ -1598,6 +1598,79 @@ export const projectRecords: ProjectRecord[] = [
       }
     ],
     "overview": "Allscope Concrete delivered concrete works at Al Noori Muslim School in Greenacre."
+  },
+  {
+    "slug": "el-jannah-minto",
+    "order": 19,
+    "code": "EJM",
+    "name": "El Jannah Minto",
+    "location": "Minto",
+    "sector": "hospitality",
+    "team": "Delivery team not recorded",
+    "legacyPage": null,
+    "status": "completed",
+    "statusNote": null,
+    "lead": {
+      "assetId": "PK-EJM-01",
+      "label": null,
+      "src": "/media/leads/PK-EJM-01.webp",
+      "width": 1920,
+      "height": 1280,
+      "preferredCrop": "",
+      "alt": "Completed El Jannah Minto restaurant exterior",
+      "objectPosition": "50% 50%"
+    },
+    "gallery": [
+      {
+        "assetId": "PK-EJM-02",
+        "src": "/media/projects/el-jannah-minto/PK-EJM-02.webp",
+        "width": 1920,
+        "height": 1440,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Aerial construction view of the El Jannah Minto building"
+      },
+      {
+        "assetId": "PK-EJM-03",
+        "src": "/media/projects/el-jannah-minto/PK-EJM-03.webp",
+        "width": 1920,
+        "height": 1280,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Concrete drive-through pavement at El Jannah Minto"
+      },
+      {
+        "assetId": "PK-EJM-04",
+        "src": "/media/projects/el-jannah-minto/PK-EJM-04.webp",
+        "width": 1920,
+        "height": 1280,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Front elevation of the completed El Jannah Minto restaurant"
+      },
+      {
+        "assetId": "PK-EJM-05",
+        "src": "/media/projects/el-jannah-minto/PK-EJM-05.webp",
+        "width": 1920,
+        "height": 1280,
+        "orientation": "landscape",
+        "tier": "A",
+        "render": false,
+        "contextOnly": false,
+        "caption": "",
+        "alt": "Side elevation and concrete pavement at El Jannah Minto"
+      }
+    ],
+    "overview": "Allscope Concrete delivered concrete works for the El Jannah restaurant at Minto."
   }
 ];
 
