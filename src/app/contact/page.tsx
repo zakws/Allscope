@@ -95,7 +95,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="tech-label text-ink-3">Email</p>
-                    <span className="block py-2 text-lg text-ink-3">Email: {site.emailPending}</span>
+                    <a
+                      href={site.emailHref}
+                      className="mt-1 block break-words py-2 text-lg font-medium text-ink transition-colors hover:text-red-350"
+                    >
+                      {site.email}
+                    </a>
                   </div>
                   <div>
                     <p className="tech-label text-ink-3">Service area</p>

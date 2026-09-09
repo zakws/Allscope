@@ -16,6 +16,7 @@ export function organizationJsonLd() {
     legalName: site.legalEntity,
     url: site.url,
     telephone: "+61 499 969 991",
+    email: site.email,
     areaServed: {
       "@type": "AdministrativeArea",
       name: "Sydney, New South Wales, Australia",

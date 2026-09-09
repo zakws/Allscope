@@ -44,7 +44,9 @@ export function Footer() {
                
               </li>
               <li>
-                <span className="text-ink-3">Email: {site.emailPending}</span>
+                <a href={site.emailHref} className="hover:text-orange">
+                  {site.email}
+                </a>
               </li>
               <li>
                 Service area: {site.serviceArea}

@@ -87,7 +87,12 @@ export default function TendersPage() {
 
               <div className="border border-line-750 p-6">
                 <p className="tech-label text-ink-3">Prefer email?</p>
-                <span className="mt-1 block py-2 text-lg text-ink-3">Email: {site.emailPending}</span>
+                <a
+                  href={site.emailHref}
+                  className="mt-1 block break-words py-2 text-lg font-medium text-ink transition-colors hover:text-red-350"
+                >
+                  {site.email}
+                </a>
                 <p className="mt-2 text-[0.9rem] leading-relaxed text-ink-2">
                   Closing today, or too big to attach? Call{" "}
                   <a

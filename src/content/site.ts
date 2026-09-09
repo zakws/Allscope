@@ -24,7 +24,9 @@ export const site = {
   phoneStatus: "verified" as const,
 
   /** Owner has not supplied an email yet; display copy says so. Do not render a mailto until this is real. */
-  email: "", emailPending: "Still need to add",
+  // Ali's business inbox, confirmed by Zak 9 Sep 2026.
+  email: "allscopeconcrete@yahoo.com.au",
+  emailHref: "mailto:allscopeconcrete@yahoo.com.au",
   emailStatus: "unverified" as const,
 
   tenderRecipientNote:

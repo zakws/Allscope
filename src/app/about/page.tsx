@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Allscope Concrete is a Sydney concreting subcontractor led by Ali, with a full-time in-house crew and its own plant. Who the company is, how it runs, and the builders it has delivered for.",
+    "Allscope Concrete is a Sydney concreting subcontractor led by Ali, who has more than twenty years in the industry, with a full-time in-house crew and its own plant. Who the company is, how it runs, and the builders it has delivered for.",
   path: "/about",
 });
 
@@ -73,6 +73,8 @@ const builders = [
 
 const pourWide = featurePhotos["about-pour"];
 const driveway = featurePhotos["about-completed"];
+const aliPortrait = featurePhotos["about-ali"];
+const teamPhoto = featurePhotos["about-team"];
 
 export default function AboutPage() {
   return (
@@ -90,11 +92,11 @@ export default function AboutPage() {
             Built around the pour
           </h1>
           <p className="measure mt-4 text-lg leading-relaxed text-ink-2">
-            Allscope Concrete is a Sydney concreting subcontractor led by Ali.
-            It delivers structural concrete packages for builders across
-            Sydney metro and Greater Western Sydney, and the person who prices
-            a package plans its pours and stays on the job while the concrete
-            goes down.
+            Allscope Concrete is a Sydney concreting subcontractor led by Ali,
+            who has more than twenty years of concrete behind him. It delivers
+            structural concrete packages for builders across Sydney metro and
+            Greater Western Sydney, and the person who prices a package plans
+            its pours and stays on the job while the concrete goes down.
           </p>
           <Hairline className="mt-6" />
         </Reveal>
@@ -131,6 +133,55 @@ export default function AboutPage() {
             </Reveal>
           </div>
         </section>
+
+        {/* Owner-supplied photography of the people themselves. */}
+        {aliPortrait && teamPhoto && (
+          <section aria-labelledby="people-h" className="mt-10 md:mt-12">
+            <SectionHeading eyebrow="The people">
+              <span id="people-h">Who turns up</span>
+            </SectionHeading>
+            <div className="mt-6 grid items-start gap-6 md:gap-8 lg:grid-cols-12">
+              <Reveal className="lg:col-span-5">
+                <figure>
+                  <div
+                    className="relative w-full overflow-hidden bg-surface-850"
+                    style={{ aspectRatio: `${aliPortrait.width} / ${aliPortrait.height}` }}
+                  >
+                    <Image
+                      src={aliPortrait.src}
+                      alt={aliPortrait.alt}
+                      fill
+                      sizes="(max-width: 1023px) 100vw, 40vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="tech-label mt-3 text-ink-3">
+                    Ali. More than twenty years of concrete behind him.
+                  </figcaption>
+                </figure>
+              </Reveal>
+              <Reveal className="lg:col-span-7" delay={90}>
+                <figure>
+                  <div
+                    className="relative w-full overflow-hidden bg-surface-850"
+                    style={{ aspectRatio: `${teamPhoto.width} / ${teamPhoto.height}` }}
+                  >
+                    <Image
+                      src={teamPhoto.src}
+                      alt={teamPhoto.alt}
+                      fill
+                      sizes="(max-width: 1023px) 100vw, 55vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="tech-label mt-3 text-ink-3">
+                    Part of the crew. Full-time and in-house, on a slab of their own finishing.
+                  </figcaption>
+                </figure>
+              </Reveal>
+            </div>
+          </section>
+        )}
 
         {/* Who it works with: references first, then the record. */}
         <section aria-labelledby="builders-h" className="mt-10 md:mt-12">

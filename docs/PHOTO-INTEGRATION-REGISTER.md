@@ -268,3 +268,14 @@ party is unconfirmed; delivery team recorded as not recorded). El Jannah
 Prestons remains its own separate page. Reuse permission per the pack
 register (Abacorp or the original photographer) remains formally outstanding,
 consistent with the rest of the pack; Zak made the go-live call.
+
+## Owner-supplied people photos, 9 Sep 2026
+
+Zak supplied two photos of Allscope's own people for the About page (masters
+in ALLSCOPE-OWNER-SUPPLIED-2026-09-09): a portrait of Ali and a six-person
+crew photo around a ride-on trowel. Owner-provided imagery published at the
+owner's direction; the standing no-people rule applies to project galleries,
+not to the About page's own team photography. Wired as feature slots
+about-ali / about-team. Confirmed alongside: Ali has 20+ years in the
+industry (About copy) and the public email is allscopeconcrete@yahoo.com.au
+(footer, contact, tenders, JSON-LD).

@@ -19,6 +19,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
 const SRC = path.resolve(SITE, "..", "ALLSCOPE_ENHANCED_4K_V2", "ALLSCOPE_ENHANCED_4K");
 const REPL = path.resolve(SITE, "..", "ALLSCOPE-ENHANCED-REPLACEMENTS-2026-08-30");
+const OWNER = path.resolve(SITE, "..", "ALLSCOPE-OWNER-SUPPLIED-2026-09-09");
 const OUT = path.join(SITE, "public", "media", "features");
 
 /** Enhanced replacements (30 Aug 2026): slots whose pixel source comes from
@@ -26,6 +27,14 @@ const OUT = path.join(SITE, "public", "media", "features");
  *  wiring are unchanged. */
 const REPLACEMENTS = {
   "cap-band": "IMG_1040_ENHANCED.webp",
+};
+
+/** Owner-supplied photos (9 Sep 2026): About-page imagery of Allscope's own
+ *  people, provided by the owner for publication (folder README covers the
+ *  provenance). Sourced from the owner folder, not the V2 collection. */
+const OWNER_SUPPLIED = {
+  "about-ali": "ali-portrait.webp",
+  "about-team": "team-on-the-trowel.webp",
 };
 
 const P = "PHOTO-2026-07-29-";
@@ -46,6 +55,10 @@ const SLOTS = [
    "Tower crane rising from a formed lift core above a basement raft prepared with membrane and starter cages"],
   ["cap-band", "IMG_1040_ALLSCOPE_4K.jpg",
    "Aerial view of a large basement raft pour with two concrete pump booms, queued agitator trucks and crews spreading concrete"],
+  ["about-ali", "(owner-supplied)",
+   "Ali, the owner of Allscope Concrete, in front of an off-form concrete wall"],
+  ["about-team", "(owner-supplied)",
+   "Six Allscope crew members around a ride-on trowel on a freshly finished concrete slab"],
   ["about-pour", P + "20-58-20_ALLSCOPE_4K.jpg",
    "Concreting crew working the wet edge of a large commercial slab pour over mesh reinforcement"],
   ["about-completed", P + "20-56-49_ALLSCOPE_4K.jpg",
@@ -65,8 +78,12 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const records = {};
 for (const [slot, file, alt] of SLOTS) {
-  const p = REPLACEMENTS[slot] ? path.join(REPL, REPLACEMENTS[slot]) : path.join(SRC, file);
-  if (!fs.existsSync(p)) throw new Error("missing master: " + (REPLACEMENTS[slot] ?? file));
+  const p = OWNER_SUPPLIED[slot]
+    ? path.join(OWNER, OWNER_SUPPLIED[slot])
+    : REPLACEMENTS[slot]
+      ? path.join(REPL, REPLACEMENTS[slot])
+      : path.join(SRC, file);
+  if (!fs.existsSync(p)) throw new Error("missing master: " + (OWNER_SUPPLIED[slot] ?? REPLACEMENTS[slot] ?? file));
   const img = sharp(p).rotate();
   const meta = await img.metadata();
   const landscape = (meta.width ?? 1) >= (meta.height ?? 1);

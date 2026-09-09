@@ -60,6 +60,18 @@ export const featurePhotos = {
     "height": 1086,
     "alt": "Aerial view of a large basement raft pour with two concrete pump booms, queued agitator trucks and crews spreading concrete"
   },
+  "about-ali": {
+    "src": "/media/features/about-ali.webp",
+    "width": 1122,
+    "height": 1402,
+    "alt": "Ali, the owner of Allscope Concrete, in front of an off-form concrete wall"
+  },
+  "about-team": {
+    "src": "/media/features/about-team.webp",
+    "width": 1397,
+    "height": 1126,
+    "alt": "Six Allscope crew members around a ride-on trowel on a freshly finished concrete slab"
+  },
   "about-pour": {
     "src": "/media/features/about-pour.webp",
     "width": 1800,
